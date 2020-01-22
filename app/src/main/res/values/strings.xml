@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Clase2</string>
+    <string name="app_name">MiApp</string>
     <string name="correo_electronico">Digite su correo electrónico</string>
     <string name="password">Digite contraseña (min 6 dígitos)</string>
     <string name="iniciar_sesion">Iniciar sesión</string>
