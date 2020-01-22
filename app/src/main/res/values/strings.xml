@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Clase2</string>
+    <string name="correo_electronico">Digite su correo electrónico</string>
+    <string name="password">Digite contraseña (min 6 dígitos)</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="digite_el_nombre">Digite su nombre</string>
+    <string name="digite_el_telefono">Digite su teléfono</string>
+    <string name="repassword">Repetir contraseña</string>
+    <string name="resultado">Resultado</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="cine">Cine</string>
+    <string name="gimnasio">Gimnasio</string>
+    <string name="leer">Leer</string>
+    <string name="series">Series</string>
+    <string name="genero">Género:</string>
+    <string name="msg_error_campos_vacios">Debe digitar todos los campos</string>
+    <string name="fecha_de_nacimiento">Seleccione su fecha de nacimiento</string>
+    <string name="hobbies">Hobbies:</string>
+    <string name="lugar_nacimiento">Elija su lugar de nacimiento</string>
+    <string name="contrasenasdiferentes">Las contraseñas no coinciden</string>
+    <string name="cerrar">cerrar</string>
+</resources>
