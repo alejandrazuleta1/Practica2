@@ -102,7 +102,10 @@ class RegistroActivity : AppCompatActivity() {
                 Toast.makeText(this,getString(R.string.msg_error_campos_vacios),Toast.LENGTH_SHORT).show()
             }else if (password!=repPassword){
                 Toast.makeText(this,getString(R.string.contrasenasdiferentes),Toast.LENGTH_SHORT).show()
-            }else{
+            }else if (password.length<6){
+                Toast.makeText(this,"La contraseña es muy corta, debe escribir mínimo 6 dígitos",Toast.LENGTH_SHORT).show()
+            }
+            else{
                 /*tv_resultado.text = "Nombre: " + nombre +
                         "\nCorreo: " + correo +
                         "\nTeléfono: " + telefono +
