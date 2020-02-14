@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">MiApp</string>
-    <string name="correo_electronico">Digite su correo electrónico</string>
-    <string name="password">Digite contraseña (min 6 dígitos)</string>
-    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="iniciar_sesion">Ingresar</string>
     <string name="registrarse">Registrarse</string>
     <string name="digite_el_nombre">Digite su nombre</string>
     <string name="digite_el_telefono">Digite su teléfono</string>
@@ -21,4 +21,5 @@
     <string name="lugar_nacimiento">Elija su lugar de nacimiento</string>
     <string name="contrasenasdiferentes">Las contraseñas no coinciden</string>
     <string name="cerrar">cerrar</string>
+    <string name="mantenersesion">Mantener sesión iniciada</string>
 </resources>
