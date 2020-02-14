@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MiApp</string>
+    <string name="app_name">Asistente Académico</string>
     <string name="correo_electronico">Correo electrónico</string>
     <string name="password">Contraseña</string>
     <string name="iniciar_sesion">Ingresar</string>
