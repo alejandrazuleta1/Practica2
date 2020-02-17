@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_perfil">
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.alejandrazuleta.clase2.PerfilFragment"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_notas"
+        android:name="com.alejandrazuleta.clase2.NotasFragment"
+        android:label="@string/menu_notas"
+        tools:layout="@layout/fragment_notas" />
+
+    <fragment
+        android:id="@+id/nav_fechacitacion"
+        android:name="com.alejandrazuleta.clase2.FechacitacionFragment"
+        android:label="@string/menu_fechacitacion"
+        tools:layout="@layout/fragment_fechacitacion" />
+
+    <fragment
+        android:id="@+id/nav_horario"
+        android:name="com.alejandrazuleta.clase2.HorarioFragment"
+        android:label="@string/menu_horario"
+        tools:layout="@layout/fragment_horario" />
+
+    <fragment
+        android:id="@+id/nav_calendario"
+        android:name="com.alejandrazuleta.clase2.CalendarioFragment"
+        android:label="@string/menu_calendario"
+        tools:layout="@layout/fragment_calendario" />
+
+    <fragment
+        android:id="@+id/nav_calculadora"
+        android:name="com.alejandrazuleta.clase2.CalculadoraFragment"
+        android:label="@string/menu_calculadora"
+        tools:layout="@layout/fragment_calculadora" />
+</navigation>

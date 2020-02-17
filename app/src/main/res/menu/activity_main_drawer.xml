@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_account_circle_black_48dp"
+            android:title="@string/menu_perfil" />
+        <item
+            android:id="@+id/nav_notas"
+            android:icon="@drawable/ic_school_black_48dp"
+            android:title="@string/menu_notas" />
+        <item
+            android:id="@+id/nav_fechacitacion"
+            android:icon="@drawable/ic_date_range_black_48dp"
+            android:title="@string/menu_fechacitacion" />
+        <item
+            android:id="@+id/nav_horario"
+            android:icon="@drawable/ic_schedule_black_48dp"
+            android:title="@string/menu_horario" />
+        <item
+            android:id="@+id/nav_calendario"
+            android:icon="@drawable/ic_account_balance_black_48dp"
+            android:title="@string/menu_calendario" />
+        <item
+            android:id="@+id/nav_calculadora"
+            android:icon="@drawable/ic_poll_black_48dp"
+            android:title="@string/menu_calculadora" />
+        <item
+            android:id="@+id/nav_cerrarsesion"
+            android:icon="@drawable/ic_close_black_48dp"
+            android:title="@string/menu_cerrarsesion" />
+    </group>
+
+</menu>

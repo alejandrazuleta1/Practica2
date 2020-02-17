@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#8BC34A</color>
-    <color name="colorPrimaryDark">#689F38</color>
+    <color name="colorPrimary">#348F41</color>
+    <color name="colorPrimaryDark">#01602D</color>
     <color name="colorLightPrimary">#DCEDC8</color>
-    <color name="colorAccent">#CDDC39</color>
+    <color name="colorAccent">#009579</color>
     <color name="colorPrimaryText">#343F4B</color>
     <color name="colorSecondaryText">#5A6978</color>
+    <color name="colorsidebardark">#343F4B</color>
     <item name="black" type="color">#000000</item>
     <item name="navy" type="color">	#000080</item>
     <item name="darkblue" type="color">#00008b</item>
@@ -143,7 +144,7 @@
     <item name="lightyellow" type="color">#ffffe0</item>
     <item name="snow" type="color">#fffafa</item>
     <item name="ivory" type="color">#fffff0</item>
-    <item name="white" type="color">#ffffff</item>
+    <item name="white" type="color">#FFFFFF</item>
 
 
     <integer-array name="EditColors">
