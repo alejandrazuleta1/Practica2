@@ -98,7 +98,7 @@ class RegistroActivity : AppCompatActivity() {
             if(cb_leer.isChecked)pasatiempos=pasatiempos+ SPACE +cb_leer.text
             if(cb_series.isChecked)pasatiempos=pasatiempos+ SPACE +cb_series.text
 
-            if (nombre.isEmpty()||correo.isEmpty()||password.isEmpty()||repPassword.isEmpty()){
+            if (nombre.isEmpty()||correo.isEmpty()||password.isEmpty()||repPassword.isEmpty()||telefono.isEmpty()){
                 Toast.makeText(this,getString(R.string.msg_error_campos_vacios),Toast.LENGTH_SHORT).show()
             }else if (password!=repPassword){
                 Toast.makeText(this,getString(R.string.contrasenasdiferentes),Toast.LENGTH_SHORT).show()
