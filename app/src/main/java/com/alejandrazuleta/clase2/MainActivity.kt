@@ -1,20 +1,23 @@
 package com.alejandrazuleta.clase2
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
+import com.alejandrazuleta.clase2.model.curso
+import com.alejandrazuleta.clase2.model.cursoinscrito
+import com.alejandrazuleta.clase2.model.facultad
 import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import android.view.Menu
-import android.content.Intent
-import android.view.MenuItem
+import com.google.firebase.database.FirebaseDatabase
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +27,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        // Write a message to the database
+        val database = FirebaseDatabase.getInstance()
+        val myRef = database.getReference("facultades")
+
+        val idfacultad = myRef.push().key
+        val myarray = arrayListOf<String>("1","2")
+
+        val facultad = facultad(idfacultad!!,"Ingenieria", myarray as Array<String>)
+        myRef.child(idfacultad).setValue(facultad)
+
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -69,6 +85,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.nav_cerrarsesion){
+
             var intent = Intent(this,LoginActivity::class.java)
             intent.putExtra("email",correo)
             intent.putExtra("password",password)

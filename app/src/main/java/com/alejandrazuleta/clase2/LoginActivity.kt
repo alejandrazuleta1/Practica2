@@ -32,26 +32,26 @@ class LoginActivity : AppCompatActivity() {
         bt_login.setOnClickListener {
             var emailDig = et_email.text.toString()
             var passwordDig = et_password.text.toString()
-
+            /*
             if(emailDig=="") {
                 Toast.makeText(this, "Escriba el email y la contraseña", Toast.LENGTH_SHORT).show()
             }else{
                 if (emailRec == emailDig) {
                     if (passwordRec == passwordDig) {
-                        //abrir el main
+                        //abrir el main*/
                         var intent = Intent(this, MainActivity::class.java)
                         intent.putExtra("correo", emailDig)
                         intent.putExtra("password", passwordDig)
                         startActivity(intent)
                         finish()
-                    } else {
+                   /* } else {
                         Toast.makeText(this, passwordRec, Toast.LENGTH_SHORT).show()
                         //Toast.makeText(this,"Contraseña equivocada",Toast.LENGTH_SHORT).show()
                     }
                 }else {
                     Toast.makeText(this,"No se encuentra registrado ese correo",Toast.LENGTH_SHORT).show()
                 }
-            }
+            }*/
         }
     }
 

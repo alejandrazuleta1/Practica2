@@ -7,37 +7,37 @@
 
     <fragment
         android:id="@+id/nav_perfil"
-        android:name="com.alejandrazuleta.clase2.PerfilFragment"
+        android:name="com.alejandrazuleta.clase2.ui.PerfilFragment"
         android:label="@string/menu_perfil"
         tools:layout="@layout/fragment_perfil" />
 
     <fragment
         android:id="@+id/nav_notas"
-        android:name="com.alejandrazuleta.clase2.NotasFragment"
+        android:name="com.alejandrazuleta.clase2.ui.NotasFragment"
         android:label="@string/menu_notas"
         tools:layout="@layout/fragment_notas" />
 
     <fragment
         android:id="@+id/nav_calculadora"
-        android:name="com.alejandrazuleta.clase2.CalculadoraFragment"
+        android:name="com.alejandrazuleta.clase2.ui.CalculadoraFragment"
         android:label="@string/menu_calculadora"
         tools:layout="@layout/fragment_calculadora" />
 
     <fragment
         android:id="@+id/nav_horario"
-        android:name="com.alejandrazuleta.clase2.HorarioFragment"
+        android:name="com.alejandrazuleta.clase2.ui.HorarioFragment"
         android:label="@string/menu_horario"
         tools:layout="@layout/fragment_horario" />
 
     <fragment
         android:id="@+id/nav_eventos"
-        android:name="com.alejandrazuleta.clase2.EventosFragment"
+        android:name="com.alejandrazuleta.clase2.ui.EventosFragment"
         android:label="@string/menu_eventos"
         tools:layout="@layout/fragment_eventos" />
 
     <fragment
         android:id="@+id/nav_cerrarsesion"
-        android:name="com.alejandrazuleta.clase2.CerrarsesionFragment"
+        android:name="com.alejandrazuleta.clase2.ui.CerrarsesionFragment"
         android:label="@string/menu_cerrarsesion"
         tools:layout="@layout/fragment_cerrarsesion" />
 </navigation>

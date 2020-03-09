@@ -37,7 +37,7 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_perfil">Perfil</string>
     <string name="menu_notas">Notas</string>
@@ -47,4 +47,6 @@
     <string name="menu_calculadora">Calculadora</string>
     <string name="menu_cerrarsesion">Cerrar sesión</string>
     <string name="menu_eventos">Eventos</string>
+    <string name="promedio">Promedio: </string>
+    <string name="avance">Avance: </string>
 </resources>
