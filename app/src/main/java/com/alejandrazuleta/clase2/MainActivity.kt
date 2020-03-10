@@ -18,7 +18,6 @@ import com.alejandrazuleta.clase2.model.facultad
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.database.FirebaseDatabase
 
-
 class MainActivity : AppCompatActivity() {
 
     var correo =""
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        /*
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("facultades")
@@ -37,14 +36,14 @@ class MainActivity : AppCompatActivity() {
 
         val facultad = facultad(idfacultad!!,"Ingenieria", myarray as Array<String>)
         myRef.child(idfacultad).setValue(facultad)
-
+        */
 
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         var datosRecebidos =intent.extras
-        if (datosRecebidos != null){
+        if (datosRecebidos != null) {
             correo = datosRecebidos?.getString("correo").toString()
             password = datosRecebidos?.getString("password").toString()
         }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "489049939374",
+    "firebase_url": "https://asistente-academico-1e0dd.firebaseio.com",
+    "project_id": "asistente-academico-1e0dd",
+    "storage_bucket": "asistente-academico-1e0dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489049939374:android:783227d03a42393bc63c3f",
+        "android_client_info": {
+          "package_name": "com.alejandrazuleta.clase2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489049939374-vpmicvj5d6akfctcrmi6jvohbvkj4u2k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alejandrazuleta.clase2",
+            "certificate_hash": "2cfc4c4ab7d1765bba152385605bbaa7bfe50d34"
+          }
+        },
+        {
+          "client_id": "489049939374-eahs7d6sp8s064l6th3bde5f34ftuavo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT-dvalm_A5LzaByqrzWzouWXmfuRsZ6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489049939374-eahs7d6sp8s064l6th3bde5f34ftuavo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
