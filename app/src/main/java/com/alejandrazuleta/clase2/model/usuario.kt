@@ -11,6 +11,7 @@ class usuario(
     @ColumnInfo(name ="idfacultad") val idfacultad: String = "",
     @ColumnInfo(name ="programa") val programa: String = "",
     @ColumnInfo(name ="promedio") val promedio: Double = 0.0,
-    @ColumnInfo(name ="avance") val avance: Double = 0.0,
+    @ColumnInfo(name ="avance") val avance: Int = 0,
+    @ColumnInfo(name ="total") val total: Int = 0,
     @ColumnInfo(name ="citacion") val citacion: String = ""
 )

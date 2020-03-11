@@ -49,4 +49,6 @@
     <string name="menu_eventos">Eventos</string>
     <string name="promedio">Promedio: </string>
     <string name="avance">Avance: </string>
+
+    <string name="porc">%</string>
 </resources>

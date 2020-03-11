@@ -1,5 +1,6 @@
 package com.alejandrazuleta.clase2
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -12,41 +13,17 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.alejandrazuleta.clase2.model.curso
-import com.alejandrazuleta.clase2.model.cursoinscrito
-import com.alejandrazuleta.clase2.model.facultad
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseAuth
+
 
 class MainActivity : AppCompatActivity() {
-
-    var correo =""
-    var password =""
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        /*
-        // Write a message to the database
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("facultades")
-
-        val idfacultad = myRef.push().key
-        val myarray = arrayListOf<String>("1","2")
-
-        val facultad = facultad(idfacultad!!,"Ingenieria", myarray as Array<String>)
-        myRef.child(idfacultad).setValue(facultad)
-        */
-
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        var datosRecebidos =intent.extras
-        if (datosRecebidos != null) {
-            correo = datosRecebidos?.getString("correo").toString()
-            password = datosRecebidos?.getString("password").toString()
-        }
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -59,11 +36,12 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_perfil, R.id.nav_notas, R.id.nav_calculadora,
-                R.id.nav_horario, R.id.nav_eventos, R.id.nav_cerrarsesion
+                R.id.nav_horario, R.id.nav_eventos
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -83,14 +61,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.nav_cerrarsesion){
-
-            var intent = Intent(this,LoginActivity::class.java)
-            intent.putExtra("email",correo)
-            intent.putExtra("password",password)
-            startActivity(intent)
-            finish()
+        if(item.itemId == R.id.nav_cerrarsesion) {
+            //preguntar si está seguro
+            val alertDialog: AlertDialog? = this@MainActivity?.let {
+                val builder = AlertDialog.Builder(it)
+                builder.apply {
+                    setMessage("Estás seguro que deseas cerrar sesión?")
+                    setPositiveButton(
+                        "Sí"
+                    ) { dialog, id ->
+                        //ciero sesion en firebase
+                        val auth = FirebaseAuth.getInstance()
+                        auth.signOut()
+                        goToLoginActivity()
+                    }
+                    setNegativeButton(
+                        "No"
+                    ) { dialog, id ->
+                    }
+                }
+                builder.create()
+            }
+            alertDialog?.show()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun goToLoginActivity() {
+        var intent = Intent(this,LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

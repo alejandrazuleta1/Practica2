@@ -1,15 +1,14 @@
 package com.alejandrazuleta.clase2
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlin.reflect.typeOf
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,9 +26,11 @@ class LoginActivity : AppCompatActivity() {
             passwordRec = datosRecebidos?.getString("password").toString()
         }
 
-        tv_registrar.setOnClickListener {
-            var intent = Intent(this,RegistroActivity::class.java)
-            startActivityForResult(intent,1)
+        //verifico si ya hay usuario logeado
+        val auth = FirebaseAuth.getInstance()
+        if (auth.currentUser != null) {
+            // already signed in
+            goToMainActivity()
         }
 
         bt_login.setOnClickListener {
@@ -47,7 +48,10 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("LoginActivity", "signInWithEmail:success")
-                            goToMainActivity()
+                            val currentUser = auth.currentUser
+                            if (currentUser != null) {
+                                goToMainActivity()
+                            }
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("LoginActivity", "signInWithEmail:failure", task.exception)
@@ -65,16 +69,4 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode==1 && resultCode==Activity.RESULT_CANCELED)
-            Toast.makeText(this,"No se registró",Toast.LENGTH_SHORT).show()
-        if(requestCode==1 && resultCode==Activity.RESULT_OK)
-            //Toast.makeText(this,data?.extras?.getString("email"),Toast.LENGTH_SHORT).show()
-            //Toast.makeText(this,data?.extras?.getString("password"),Toast.LENGTH_SHORT).show()
-            emailRec=data?.extras?.getString("email").toString()
-            passwordRec=data?.extras?.getString("password").toString()
-        super.onActivityResult(requestCode, resultCode, data)
-    }
-
 }
