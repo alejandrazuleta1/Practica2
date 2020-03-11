@@ -18,6 +18,8 @@ import kotlinx.android.synthetic.main.activity_registro.*
 import kotlinx.android.synthetic.main.activity_registro.et_password
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class RegistroActivity : AppCompatActivity() {
 
@@ -105,7 +107,7 @@ class RegistroActivity : AppCompatActivity() {
             }else if (password.length<6){
                 Toast.makeText(this,"La contraseña es muy corta, debe escribir mínimo 6 dígitos",Toast.LENGTH_SHORT).show()
             }
-            else{
+            else if (isEmailValid(correo)) {
                 /*tv_resultado.text = "Nombre: " + nombre +
                         "\nCorreo: " + correo +
                         "\nTeléfono: " + telefono +
@@ -120,6 +122,8 @@ class RegistroActivity : AppCompatActivity() {
                 intent.putExtra("password",password)
                 setResult(Activity.RESULT_OK,intent)
                 finish()
+            }else {
+                Toast.makeText(this,"El correo tiene caracteres no válidos",Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -133,5 +137,14 @@ class RegistroActivity : AppCompatActivity() {
     fun showDatePickerDialog(view: View) {
 
     }
+
+    fun isEmailValid(email: String?): Boolean {
+        val expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$"
+        val pattern: Pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE)
+        val matcher: Matcher = pattern.matcher(email)
+        return matcher.matches()
+    }
+
+
 }
 
