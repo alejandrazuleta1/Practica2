@@ -22,10 +22,20 @@ class PerfilFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil, container, false)
+        val view = inflater.inflate(R.layout.fragment_perfil, container, false)
+
+        val auth = FirebaseAuth.getInstance()
+        val user = auth.currentUser
+        if (user != null) {
+            // already signed in
+            val database = FirebaseDatabase.getInstance()
+            val myRef = database.getReference("usuarios")
+        }
+
+            return view
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+   /* override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
@@ -34,8 +44,8 @@ class PerfilFragment : Fragment() {
         if (user != null) {
             // already signed in
             val database = FirebaseDatabase.getInstance()
-            /*val myRef = database.getReference("usuarios")
-            // Read from the database
+            val myRef = database.getReference("usuarios")
+            /*// Read from the database
             myRef.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val usuario = dataSnapshot.getValue(usuario::class.java)
@@ -59,5 +69,5 @@ class PerfilFragment : Fragment() {
             // No user is signed in.
             //mostrar datos guardados de ROOM si hay
         }
-    }
+    }*/
 }

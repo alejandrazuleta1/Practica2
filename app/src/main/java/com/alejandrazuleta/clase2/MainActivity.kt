@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        //navView.setNavigationItemSelectedListener(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -60,36 +61,35 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.nav_cerrarsesion) {
-            //preguntar si está seguro
-            val alertDialog: AlertDialog? = this@MainActivity?.let {
-                val builder = AlertDialog.Builder(it)
-                builder.apply {
-                    setMessage("Estás seguro que deseas cerrar sesión?")
-                    setPositiveButton(
-                        "Sí"
-                    ) { dialog, id ->
-                        //ciero sesion en firebase
-                        val auth = FirebaseAuth.getInstance()
-                        auth.signOut()
-                        goToLoginActivity()
-                    }
-                    setNegativeButton(
-                        "No"
-                    ) { dialog, id ->
-                    }
-                }
-                builder.create()
-            }
-            alertDialog?.show()
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
     fun goToLoginActivity() {
         var intent = Intent(this,LoginActivity::class.java)
         startActivity(intent)
         finish()
     }
+
+    private fun NavigationView.setNavigationItemSelectedListener(item: MenuItem) : Boolean{
+        //preguntar si está seguro
+        val alertDialog: AlertDialog? = this@MainActivity.let {
+            val builder = AlertDialog.Builder(it)
+            builder.apply {
+                setMessage("Estás seguro que deseas cerrar sesión?")
+                setPositiveButton(
+                    "Sí"
+                ) { dialog, id ->
+                    //ciero sesion en firebase
+                    val auth = FirebaseAuth.getInstance()
+                    auth.signOut()
+                    goToLoginActivity()
+                }
+                setNegativeButton(
+                    "No"
+                ) { dialog, id ->
+                }
+            }
+            builder.create()
+        }
+        alertDialog?.show()
+        return true
+    }
 }
+
