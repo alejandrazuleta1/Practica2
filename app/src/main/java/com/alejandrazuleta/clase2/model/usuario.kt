@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tabla_usuario")
 class usuario(
-    @PrimaryKey @ColumnInfo(name = "id") val id: String = "",
+    @ColumnInfo(name = "id") val id: String = "",
     @ColumnInfo(name ="nombre") val nombre: String = "",
     @ColumnInfo(name ="idfacultad") val idfacultad: String = "",
     @ColumnInfo(name ="programa") val programa: String = "",

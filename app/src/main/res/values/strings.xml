@@ -47,8 +47,9 @@
     <string name="menu_calculadora">Calculadora</string>
     <string name="menu_cerrarsesion">Cerrar sesión</string>
     <string name="menu_eventos">Eventos</string>
-    <string name="promedio">Promedio: </string>
-    <string name="avance">Avance: </string>
+    <string name="promedio">Promedio:</string>
+    <string name="avance">Avance:</string>
 
     <string name="porc">%</string>
+    <string name="facude">Facultad de </string>
 </resources>

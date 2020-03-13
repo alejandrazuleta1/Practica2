@@ -17,8 +17,8 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 
-class MainActivity : AppCompatActivity() {
-
+//class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(){
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,12 +45,6 @@ class MainActivity : AppCompatActivity() {
         //navView.setNavigationItemSelectedListener(this)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.activity_main_drawer, menu)
-        return true
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
@@ -58,38 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        finish()
-    }
-
-    fun goToLoginActivity() {
-        var intent = Intent(this,LoginActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    private fun NavigationView.setNavigationItemSelectedListener(item: MenuItem) : Boolean{
-        //preguntar si está seguro
-        val alertDialog: AlertDialog? = this@MainActivity.let {
-            val builder = AlertDialog.Builder(it)
-            builder.apply {
-                setMessage("Estás seguro que deseas cerrar sesión?")
-                setPositiveButton(
-                    "Sí"
-                ) { dialog, id ->
-                    //ciero sesion en firebase
-                    val auth = FirebaseAuth.getInstance()
-                    auth.signOut()
-                    goToLoginActivity()
-                }
-                setNegativeButton(
-                    "No"
-                ) { dialog, id ->
-                }
-            }
-            builder.create()
-        }
-        alertDialog?.show()
-        return true
+        this.finish()
     }
 }
 
