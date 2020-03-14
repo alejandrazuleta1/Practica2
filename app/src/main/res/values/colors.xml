@@ -9,6 +9,7 @@
     <color name="colorsidebardark">#343F4B</color>
     <color name="colortextaux">#47525E</color>
     <color name="colortextnotas">#1F2D3D</color>
+    <color name="dias">#8492A6</color>
     <item name="black" type="color">#000000</item>
     <item name="navy" type="color">	#000080</item>
     <item name="darkblue" type="color">#00008b</item>

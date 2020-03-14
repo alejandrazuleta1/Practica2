@@ -12,8 +12,6 @@ import android.widget.ArrayAdapter
 import android.widget.DatePicker
 import android.widget.Toast
 import androidx.core.view.get
-import com.alejandrazuleta.clase2.utils.Constantes.Companion.EMPTY
-import com.alejandrazuleta.clase2.utils.Constantes.Companion.SPACE
 import kotlinx.android.synthetic.main.activity_registro.*
 import kotlinx.android.synthetic.main.activity_registro.et_password
 import java.text.SimpleDateFormat
@@ -66,7 +64,7 @@ class RegistroActivity : AppCompatActivity() {
         // Finally, data bind the spinner object with dapter
         spCiudad.adapter = adapter;
 
-        var ciudad= EMPTY;
+        var ciudad= "";
 
         spCiudad.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent:AdapterView<*>, view: View, position: Int, id: Long){
@@ -91,12 +89,12 @@ class RegistroActivity : AppCompatActivity() {
             if(rb_masculino.isChecked) sexo="Masculino"
             else sexo="Femenino"
 
-            var pasatiempos=EMPTY
+            var pasatiempos=""
 
-            if(cb_cine.isChecked)pasatiempos=pasatiempos+ SPACE +cb_cine.text
-            if(cb_gimnasio.isChecked)pasatiempos=pasatiempos+ SPACE +getString(R.string.gimnasio) //otra opcion para que traduzca todos los strings
-            if(cb_leer.isChecked)pasatiempos=pasatiempos+ SPACE +cb_leer.text
-            if(cb_series.isChecked)pasatiempos=pasatiempos+ SPACE +cb_series.text
+            if(cb_cine.isChecked)pasatiempos=pasatiempos+ " " +cb_cine.text
+            if(cb_gimnasio.isChecked)pasatiempos=pasatiempos+ " " +getString(R.string.gimnasio) //otra opcion para que traduzca todos los strings
+            if(cb_leer.isChecked)pasatiempos=pasatiempos+ " " +cb_leer.text
+            if(cb_series.isChecked)pasatiempos=pasatiempos+ " " +cb_series.text
 
             if (nombre.isEmpty()||correo.isEmpty()||password.isEmpty()||repPassword.isEmpty()||telefono.isEmpty()){
                 Toast.makeText(this,getString(R.string.msg_error_campos_vacios),Toast.LENGTH_SHORT).show()

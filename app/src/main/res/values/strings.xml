@@ -52,4 +52,14 @@
 
     <string name="porc">%</string>
     <string name="facude">Facultad de </string>
+    <string name="ovalo">\"ovalo\"</string>
+    <string name="porcentaje">Porcentaje</string>
+    <string name="descripcion">Descripción</string>
+    <string name="nota">Nota</string>
+    <string name="L">L</string>
+    <string name="M">M</string>
+    <string name="W">W</string>
+    <string name="J">J</string>
+    <string name="V">V</string>
+    <string name="S">S</string>
 </resources>

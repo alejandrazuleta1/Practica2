@@ -10,6 +10,6 @@ class curso(
     @ColumnInfo(name ="nombre") val nombre: String = "",
     @ColumnInfo(name ="profesor") val profesor: String = "",
     @ColumnInfo(name ="creditos") val creditos: String = "",
-    @ColumnInfo(name ="evaluaciones") val map: HashMap<String, Int> = hashMapOf("" to 0)
-    //@ColumnInfo(name ="sesiones") val myArray: Array<sesion> = arrayOf<sesion>(val mysesion: sesion)
+    @ColumnInfo(name ="evaluaciones") val myArray1: Array<evaluacion> = arrayOf<evaluacion>(),
+    @ColumnInfo(name ="sesiones") val myArray2: Array<sesion> = arrayOf<sesion>()
 )
