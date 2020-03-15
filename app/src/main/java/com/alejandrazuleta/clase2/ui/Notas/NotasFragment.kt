@@ -1,4 +1,4 @@
-package com.alejandrazuleta.clase2.ui
+package com.alejandrazuleta.clase2.ui.Notas
 
 import android.os.Bundle
 import android.util.Log

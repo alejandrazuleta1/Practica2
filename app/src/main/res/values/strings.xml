@@ -53,7 +53,7 @@
     <string name="porc">%</string>
     <string name="facude">Facultad de </string>
     <string name="ovalo">\"ovalo\"</string>
-    <string name="porcentaje">Porcentaje</string>
+    <string name="porcentaje">%</string>
     <string name="descripcion">Descripción</string>
     <string name="nota">Nota</string>
     <string name="L">L</string>
@@ -62,4 +62,7 @@
     <string name="J">J</string>
     <string name="V">V</string>
     <string name="S">S</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="promsemestre">Promedio semestre</string>
+    <string name="notafinalcurso">Nota final curso</string>
 </resources>

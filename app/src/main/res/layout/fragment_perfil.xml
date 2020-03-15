@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/avatar"
@@ -76,6 +76,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:gravity="right"
+                android:paddingEnd="6dp"
                 android:text="@string/promedio"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -126,6 +127,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:gravity="right"
+                android:paddingEnd="6dp"
                 android:text="@string/avance"
                 android:textColor="@color/black"
                 android:textSize="14sp" />

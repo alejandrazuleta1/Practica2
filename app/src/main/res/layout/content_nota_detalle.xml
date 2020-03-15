@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constrainLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     android:stretchColumns="1"
-    tools:context=".NotaDellateActivity">
+    tools:context=".ui.Notas.NotaDellateActivity">
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -19,15 +20,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/colorAccent">
+            android:background="@drawable/rectencabezado"
+            android:weightSum="1">
 
             <TextView
-                android:layout_weight="0.2"
+                android:layout_width="match_parent"
+                android:layout_weight="0.1"
                 android:fontFamily="@font/lato"
                 android:padding="10dip"
                 android:text="@string/porcentaje"
@@ -36,7 +40,8 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_weight="0.6"
+                android:layout_width="match_parent"
+                android:layout_weight="0.8"
                 android:fontFamily="@font/lato"
                 android:padding="10dip"
                 android:text="@string/descripcion"
@@ -44,7 +49,9 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_weight="0.2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
                 android:fontFamily="@font/lato"
                 android:padding="10dip"
                 android:text="@string/nota"

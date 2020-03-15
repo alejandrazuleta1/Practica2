@@ -1,10 +1,12 @@
-package com.alejandrazuleta.clase2
+package com.alejandrazuleta.clase2.ui.Notas
 
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.setPadding
+import com.alejandrazuleta.clase2.R
 import com.alejandrazuleta.clase2.model.cursoinscrito
 import com.alejandrazuleta.clase2.model.evaluacion
 import com.google.firebase.database.DataSnapshot
@@ -12,7 +14,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.content_nota_detalle.*
-import kotlinx.android.synthetic.main.nav_header_main.*
 
 
 class NotaDellateActivity : AppCompatActivity() {
@@ -62,6 +63,7 @@ class NotaDellateActivity : AppCompatActivity() {
             val row = TableRow(this)
             val lp = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT)
             row.setLayoutParams(lp)
+            row.setBackgroundResource(R.drawable.recttabla)
 
             val porc = TextView(this)
             val descripcion = TextView(this)
@@ -71,16 +73,19 @@ class NotaDellateActivity : AppCompatActivity() {
             descripcion.setText(evaluaciones[i]!!.nombre.toString())
             nota.setText(cursoinscrito.notas[i].toString())
 
-            /*val params = porc.getLayoutParams() as TableRow.LayoutParams
-            params.weight = 0.2f
-            porc.setLayoutParams(params)
-            nota.setLayoutParams(params)
-            params.weight = 0.6f
-            descripcion.setLayoutParams(params)*/
+            val lpi1 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT,0.1f)
+            val lpi2 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT,0.9f)
+            val lpi3 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT,0.08f)
 
-            row.addView(porc)
-            row.addView(descripcion)
-            row.addView(nota)
+            porc.setPadding(10)
+            descripcion.setPadding(10)
+            nota.setPadding(10)
+
+            row.weightSum = 1f
+
+            row.addView(porc,lpi1)
+            row.addView(descripcion,lpi2)
+            row.addView(nota,lpi3)
             tableLayout.addView(row, i + 1);
         }
     }

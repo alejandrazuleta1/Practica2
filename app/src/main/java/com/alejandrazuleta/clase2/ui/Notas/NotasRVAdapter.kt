@@ -1,4 +1,4 @@
-package com.alejandrazuleta.clase2.ui
+package com.alejandrazuleta.clase2.ui.Notas
 
 import android.content.Context
 import android.content.Intent
@@ -6,9 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.alejandrazuleta.clase2.NotaDellateActivity
 import com.alejandrazuleta.clase2.R
 import com.alejandrazuleta.clase2.model.cursoinscrito
 import com.google.firebase.database.DataSnapshot
@@ -35,13 +33,16 @@ class NotasRVAdapter(
         viewType: Int
     ): NotasViewHolder {
         var itemView = LayoutInflater.from(context).inflate(R.layout.item_notas_rv, parent, false)
-        return NotasViewHolder(itemView,context)
+        return NotasViewHolder(
+            itemView,
+            context
+        )
     }
 
     override fun getItemCount(): Int = cursosinsList.size
 
     override fun onBindViewHolder(
-        holder: NotasRVAdapter.NotasViewHolder,
+        holder: NotasViewHolder,
         position: Int
     ) {
         val cursoinscrito: cursoinscrito = cursosinsList[position]
