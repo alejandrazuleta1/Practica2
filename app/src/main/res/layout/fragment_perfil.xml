@@ -11,11 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+
         <ImageView
             android:id="@+id/avatar"
             android:layout_width="167dp"
             android:layout_height="136dp"
-            android:layout_marginTop="24dp"
             android:src="@drawable/avatar1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -91,6 +92,7 @@
                 android:text=""
                 android:textColor="@color/colortextaux"
                 android:textSize="14sp" />
+
         </LinearLayout>
 
         <ProgressBar
@@ -144,10 +146,6 @@
                 android:layout_weight="1"/>
 
         </LinearLayout>
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

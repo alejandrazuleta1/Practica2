@@ -71,4 +71,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="curso">Curso</string>
+    <string name="creditos">Créditos</string>
+    <string name="calcular">Calcular</string>
 </resources>
