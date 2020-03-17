@@ -44,7 +44,7 @@
     <string name="menu_fechacitacion">Fecha citación</string>
     <string name="menu_horario">Horario</string>
     <string name="menu_calendario">Calendario</string>
-    <string name="menu_calculadora">Calculadora</string>
+    <string name="menu_calculadora">Calcula</string>
     <string name="menu_cerrarsesion">Cerrar sesión</string>
     <string name="menu_eventos">Eventos</string>
     <string name="promedio">Promedio:</string>
