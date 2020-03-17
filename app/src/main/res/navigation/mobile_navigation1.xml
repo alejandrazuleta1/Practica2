@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/nav_eventos"
-        android:name="com.alejandrazuleta.clase2.ui.EventosFragment"
+        android:name="com.alejandrazuleta.clase2.ui.Eventos.EventosFragment"
         android:label="@string/menu_eventos"
         tools:layout="@layout/fragment_eventos" />
 

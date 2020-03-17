@@ -1,4 +1,4 @@
-package com.alejandrazuleta.clase2.ui
+package com.alejandrazuleta.clase2.ui.Eventos
 
 
 import android.os.Bundle

@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
 
         var datosRecebidos =intent.extras
         if (datosRecebidos != null){
-            emailRec = datosRecebidos?.getString("email").toString()
-            passwordRec = datosRecebidos?.getString("password").toString()
+            emailRec = datosRecebidos.getString("email").toString()
+            passwordRec = datosRecebidos.getString("password").toString()
         }
 
         //verifico si ya hay usuario logeado
@@ -57,6 +57,9 @@ class LoginActivity : AppCompatActivity() {
                             Log.w("LoginActivity", "signInWithEmail:failure", task.exception)
                             if(task.exception!!.message.equals("There is no user record corresponding to this identifier. The user may have been deleted.")){
                                 Toast.makeText(this,"Usuario no registrado",Toast.LENGTH_SHORT).show()
+                            }
+                            if(task.exception!!.message.equals("A network error (such as timeout, interrupted connection or unreachable host) has occurred.")){
+                                Toast.makeText(this,"Error de red",Toast.LENGTH_SHORT).show()
                             }
                         }
                     }

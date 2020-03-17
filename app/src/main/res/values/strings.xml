@@ -65,4 +65,10 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="promsemestre">Promedio semestre</string>
     <string name="notafinalcurso">Nota final curso</string>
+    <string name="recordatorios">Recordatorios</string>
+    <string name="consultarcitacion">Consultar citación</string>
+    <string name="calendarioac">Calendario académico</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.alejandrazuleta.clase2.ui
+package com.alejandrazuleta.clase2.ui.Eventos
 
 
 import android.os.Bundle
@@ -11,14 +11,14 @@ import com.alejandrazuleta.clase2.R
 /**
  * A simple [Fragment] subclass.
  */
-class EventosFragment : Fragment() {
+class FechacitacionFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_eventos, container, false)
+        return inflater.inflate(R.layout.fragment_fechacitacion, container, false)
     }
 
 
