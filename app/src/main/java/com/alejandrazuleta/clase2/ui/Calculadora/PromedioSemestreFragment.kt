@@ -56,10 +56,12 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                                         row.setLayoutParams(lp)
                                         row.setBackgroundResource(R.drawable.recttabla2)
 
-                                        val lpi1 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT,0.9f)
-                                        val lpi2 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
-                                            TableRow.LayoutParams.MATCH_PARENT,0.07f)
-                                        val lpi3 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT,0.03f)
+                                        val lpi1 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                                            TableRow.LayoutParams.MATCH_PARENT,0.8f)
+                                        val lpi2 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                                            TableRow.LayoutParams.MATCH_PARENT,0.1f)
+                                        val lpi3 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                                            TableRow.LayoutParams.MATCH_PARENT,0.1f)
 
                                         val nota = EditText(activity!!.applicationContext)
                                         val cursoname = EditText(activity!!.applicationContext)
@@ -94,8 +96,8 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                                         row.addView(creditos,lpi2)
                                         row.addView(nota,lpi3)
                                         tableLayout.addView(row, tableLayout.childCount)
+                                        break
                                     }
-                                    break
                                 }
                             }
                             override fun onCancelled(error: DatabaseError){}
