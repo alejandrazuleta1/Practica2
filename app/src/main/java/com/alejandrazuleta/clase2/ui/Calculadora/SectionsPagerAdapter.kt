@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.alejandrazuleta.clase2.R
+import com.alejandrazuleta.clase2.ui.Calculadora.NotaFinal.NotaFinalCursoFragment
+import com.alejandrazuleta.clase2.ui.Calculadora.PromedioSemestre.PromedioSemestreFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.notafinalcurso,

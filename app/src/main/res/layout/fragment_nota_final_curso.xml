@@ -5,10 +5,35 @@
     android:id="@+id/constrainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Calculadora.NotaFinalCursoFragment"
+    tools:context=".ui.Calculadora.NotaFinal.NotaFinalCursoFragment"
     android:background="@color/white"
     android:orientation="vertical"
     android:stretchColumns="1">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/nota"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0.0"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
 
     <TextView
         android:id="@+id/textView"
@@ -20,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_nota"/>
 
     <Spinner
         android:id="@+id/sp_cursos"
@@ -72,7 +97,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.03"
+                android:layout_weight="0.05"
                 android:fontFamily="@font/lato"
                 android:padding="10dip"
                 android:text="@string/nota"
@@ -84,7 +109,7 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

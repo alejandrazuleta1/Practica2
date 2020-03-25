@@ -9,7 +9,7 @@ class curso(
     @ColumnInfo(name = "id") val id: String = "",
     @ColumnInfo(name ="nombre") val nombre: String = "",
     @ColumnInfo(name ="profesor") val profesor: String = "",
-    @ColumnInfo(name ="creditos") val creditos: String = "",
-    @ColumnInfo(name ="evaluaciones") val myArray1: Array<evaluacion> = arrayOf<evaluacion>(),
-    @ColumnInfo(name ="sesiones") val myArray2: Array<sesion> = arrayOf<sesion>()
+    @ColumnInfo(name ="creditos") val creditos: Int = 0,
+    @ColumnInfo(name ="evalyporc") val evalyporc: List<evaluacion> = arrayListOf(),
+    @ColumnInfo(name ="sesionesporsem") val sesionesporsem: List<String> = arrayListOf()
 )

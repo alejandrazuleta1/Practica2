@@ -29,16 +29,16 @@ class FechacitacionFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-
-        val usuarioDAO = Practica2.database.UsuarioDAO()
-
         var miUsuario : Usuario?
+        val usuarioDAO = Practica2.database.UsuarioDAO()
         if (usuarioDAO.loadAllUsers().size>0) {
             //poner datos guardados en room
             miUsuario = usuarioDAO.loadAllUsers()[0]
             //mostrar datos guardados de ROOM si hay
             tv_fecha.text = miUsuario.citacion
         }
+
+
 
         val auth = FirebaseAuth.getInstance()
         val user = auth.currentUser

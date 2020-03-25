@@ -33,9 +33,10 @@ class PerfilFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        var miUsuario : Usuario?
+
         val usuarioDAO = Practica2.database.UsuarioDAO()
 
-        var miUsuario : Usuario?
         if (usuarioDAO.loadAllUsers().size>0) {
             //poner datos guardados en room
             miUsuario = usuarioDAO.loadAllUsers()[0]
@@ -49,6 +50,8 @@ class PerfilFragment : Fragment() {
             tv_numavance.text = aux
             AvanceBar.progress = miUsuario.avance * 100 / miUsuario.total
         }
+
+
 
         val auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
@@ -107,6 +110,7 @@ class PerfilFragment : Fragment() {
                         if(user!=null){
                             usuarioDAO.deleteUsuario(usuarioDAO.searchUsuario(user.uid))
                         }
+
                         auth.signOut()
                         goToLoginActivity()
                     }

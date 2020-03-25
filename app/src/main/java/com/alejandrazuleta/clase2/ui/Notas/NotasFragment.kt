@@ -47,17 +47,6 @@ class NotasFragment : Fragment() {
 
         root.rv_notas.adapter = notasRVAdapter
 
-
-        /*    val deudorDAO: DeudorDAO = SesionRoom.database.DeudorDAO()
-            val allDeudores: List<Deudor> = deudorDAO.getDeudores()
-
-            val deudoresRVAdapter = DeudoresRVAdapter(
-                activity!!.applicationContext,
-                allDeudores as ArrayList<Deudor>
-            )
-
-            root.rv_deudores.adapter = deudoresRVAdapter*/
-
         return root
     }
 
@@ -92,4 +81,3 @@ class NotasFragment : Fragment() {
         })
     }
 }
-

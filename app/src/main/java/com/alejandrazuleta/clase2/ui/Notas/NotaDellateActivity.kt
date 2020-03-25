@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.content_nota_detalle.*
 
 
 class NotaDellateActivity : AppCompatActivity() {
-    val porcentajes: List<Int> = arrayListOf<Int>()
     var evaluaciones: MutableList<evaluacion?> = ArrayList()
     var cursoinscrito : cursoinscrito = cursoinscrito()
 
@@ -27,6 +26,13 @@ class NotaDellateActivity : AppCompatActivity() {
         setContentView(view)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         cursoinscrito = intent?.getSerializableExtra("cursoinscrito") as cursoinscrito
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onResume() {
@@ -89,15 +95,4 @@ class NotaDellateActivity : AppCompatActivity() {
             tableLayout.addView(row, i + 1);
         }
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.getItemId()) {
-            android.R.id.home -> {
-                onBackPressed()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
 }

@@ -74,4 +74,7 @@
     <string name="curso">Curso</string>
     <string name="creditos">Créditos</string>
     <string name="calcular">Calcular</string>
+    <string name="matr_culas">Matrículas</string>
+    <string name="ajustes">Ajustes</string>
+    <string-array name="cursos_inscritos"/>
 </resources>
