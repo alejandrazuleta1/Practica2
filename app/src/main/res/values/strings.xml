@@ -76,5 +76,12 @@
     <string name="calcular">Calcular</string>
     <string name="matr_culas">Matrículas</string>
     <string name="ajustes">Ajustes</string>
+    <string name="matr_culasExt">Matrículas Extemporáneas</string>
+    <string name="clases">Clases</string>
+    <string name="exmsfinales">Exámenes finales</string>
+    <string name="habilitaciones">Habilitaciones</string>
+    <string name="validaciones">Validaciones</string>
+    <string name="terminacionof">Terminación Oficial</string>
+    <string name="publicacionOferta">Publicación de la Oferta</string>
     <string-array name="cursos_inscritos"/>
 </resources>

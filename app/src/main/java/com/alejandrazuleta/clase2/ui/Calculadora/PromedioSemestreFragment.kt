@@ -95,7 +95,7 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                                         row.addView(cursoname,lpi1)
                                         row.addView(creditos,lpi2)
                                         row.addView(nota,lpi3)
-                                        tableLayout.addView(row, tableLayout.childCount)
+                                        tableLayout!!.addView(row, tableLayout.childCount!!)
                                         break
                                     }
                                 }

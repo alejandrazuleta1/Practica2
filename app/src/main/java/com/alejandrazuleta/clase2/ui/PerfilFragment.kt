@@ -66,7 +66,7 @@ class PerfilFragment : Fragment() {
                     for (postSnapshot in dataSnapshot.children) {
                         if(postSnapshot.key==user.uid){
                             miUsuario= postSnapshot.getValue(Usuario::class.java)
-                            tv_nombre.text = miUsuario!!.nombre
+                            tv_nombre!!.text = miUsuario!!.nombre
                             var aux = "Facultad de " + miUsuario!!.facultad
                             tv_facultad.text = aux
                             tv_programa.text = miUsuario!!.programa
