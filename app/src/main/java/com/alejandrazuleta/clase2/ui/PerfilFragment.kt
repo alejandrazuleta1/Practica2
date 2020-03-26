@@ -10,12 +10,13 @@ import com.alejandrazuleta.clase2.LoginActivity
 import com.alejandrazuleta.clase2.Practica2
 import com.alejandrazuleta.clase2.R
 import com.alejandrazuleta.clase2.model.Usuario
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.fragment_perfil.*
+import kotlinx.android.synthetic.main.content_perfil.*
 
 
 class PerfilFragment : Fragment() {
@@ -26,7 +27,37 @@ class PerfilFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_perfil, container, false)
-        setHasOptionsMenu(true);
+        val floatingActionButton : FloatingActionButton = view.findViewById(R.id.fa_cerrarsesion)
+
+        floatingActionButton.setOnClickListener{
+            val alertDialog: AlertDialog? = activity.let {
+                val builder = AlertDialog.Builder(it)
+                builder.apply {
+                    setMessage("Estás seguro que deseas cerrar sesión?")
+                    setPositiveButton(
+                        "Sí"
+                    ) { dialog, id ->
+                        //ciero sesion en firebase y borro usuario en room
+                        val auth = FirebaseAuth.getInstance()
+                        val usuarioDAO = Practica2.database.UsuarioDAO()
+                        val user = auth.currentUser
+                        if(user!=null){
+                            usuarioDAO.deleteUsuario(usuarioDAO.searchUsuario(user.uid))
+                        }
+
+                        auth.signOut()
+                        goToLoginActivity()
+                    }
+                    setNegativeButton(
+                        "No"
+                    ) { dialog, id ->
+                    }
+                }
+                builder.create()
+            }
+            alertDialog?.show()
+        }
+        //setHasOptionsMenu(true)
         return view
     }
 
@@ -89,6 +120,7 @@ class PerfilFragment : Fragment() {
         }
     }
 
+    /*
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.m_perfil, menu);
         super.onCreateOptionsMenu(menu, inflater)
@@ -124,7 +156,7 @@ class PerfilFragment : Fragment() {
             alertDialog?.show()
         }
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
     fun goToLoginActivity() {
         var intent = Intent(activity, LoginActivity::class.java)

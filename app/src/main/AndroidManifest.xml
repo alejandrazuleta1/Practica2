@@ -13,7 +13,8 @@
         <activity android:name=".ui.Notas.NotaDellateActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"/>
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
