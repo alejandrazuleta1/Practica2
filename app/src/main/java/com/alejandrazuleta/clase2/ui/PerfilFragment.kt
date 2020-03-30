@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.alejandrazuleta.clase2.LoginActivity
 import com.alejandrazuleta.clase2.Practica2
@@ -58,11 +60,13 @@ class PerfilFragment : Fragment() {
             alertDialog?.show()
         }
         //setHasOptionsMenu(true)
-        return view
-    }
 
-    override fun onStart() {
-        super.onStart()
+        val mytv_nombre :TextView = view.findViewById(R.id.tv_nombre)
+        val mytv_facultad :TextView =view.findViewById(R.id.tv_facultad)
+        val mytv_programa : TextView = view.findViewById(R.id.tv_programa)
+        val mytv_numprom : TextView = view.findViewById(R.id.tv_numprom)
+        val mytv_numavance : TextView =view.findViewById(R.id.tv_numavance)
+        val myAvanceBar: ProgressBar =view.findViewById(R.id.AvanceBar)
 
         var miUsuario : Usuario?
 
@@ -72,17 +76,15 @@ class PerfilFragment : Fragment() {
             //poner datos guardados en room
             miUsuario = usuarioDAO.loadAllUsers()[0]
             //mostrar datos guardados de ROOM si hay
-            tv_nombre.text = miUsuario.nombre
+            mytv_nombre.text = miUsuario.nombre
             var aux = "Facultad de " + miUsuario.facultad
-            tv_facultad.text = aux
-            tv_programa.text = miUsuario.programa
-            tv_numprom.text = miUsuario.promedio.toString()
+            mytv_facultad.text = aux
+            mytv_programa.text = miUsuario.programa
+            mytv_numprom.text = miUsuario.promedio.toString()
             aux = (miUsuario.avance * 100 / miUsuario.total).toString() + "%"
-            tv_numavance.text = aux
-            AvanceBar.progress = miUsuario.avance * 100 / miUsuario.total
+            mytv_numavance.text = aux
+            myAvanceBar.progress = miUsuario.avance * 100 / miUsuario.total
         }
-
-
 
         val auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
@@ -97,14 +99,14 @@ class PerfilFragment : Fragment() {
                     for (postSnapshot in dataSnapshot.children) {
                         if(postSnapshot.key==user.uid){
                             miUsuario= postSnapshot.getValue(Usuario::class.java)
-                            tv_nombre!!.text = miUsuario!!.nombre
+                            mytv_nombre!!.text = miUsuario!!.nombre
                             var aux = "Facultad de " + miUsuario!!.facultad
-                            tv_facultad.text = aux
-                            tv_programa.text = miUsuario!!.programa
-                            tv_numprom.text = miUsuario!!.promedio.toString()
+                            mytv_facultad.text = aux
+                            mytv_programa.text = miUsuario!!.programa
+                            mytv_numprom.text = miUsuario!!.promedio.toString()
                             aux = (miUsuario!!.avance*100/miUsuario!!.total).toString()+"%"
-                            tv_numavance.text = aux
-                            AvanceBar.progress = miUsuario!!.avance*100/miUsuario!!.total
+                            mytv_numavance.text = aux
+                            myAvanceBar.progress = miUsuario!!.avance*100/miUsuario!!.total
 
                             //guardar los datos leidos en room
                             usuarioDAO.insertUser(miUsuario!!)
@@ -118,6 +120,8 @@ class PerfilFragment : Fragment() {
                 }
             })
         }
+
+        return view
     }
 
     /*

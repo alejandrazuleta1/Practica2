@@ -8,5 +8,5 @@ import java.io.Serializable
 class cursoinscrito(
     @ColumnInfo(name = "idusuario") val idusuario: String = "",
     @ColumnInfo(name = "idcurso") val idcurso: String = "",
-    @ColumnInfo(name = "notas") val notas: List<Int> = arrayListOf<Int>()
+    @ColumnInfo(name = "notas") val notas: List<Double> = arrayListOf<Double>()
 ): Serializable

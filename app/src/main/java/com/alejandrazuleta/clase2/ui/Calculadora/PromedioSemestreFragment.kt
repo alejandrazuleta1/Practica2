@@ -34,6 +34,8 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
         buttonmenos.setOnClickListener(this)
         buttoncalcular.setOnClickListener(this)
 
+        val myTableLayout : TableLayout = view.findViewById(R.id.tableLayout)
+
         val auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
         val database = FirebaseDatabase.getInstance()
@@ -95,7 +97,7 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                                         row.addView(cursoname,lpi1)
                                         row.addView(creditos,lpi2)
                                         row.addView(nota,lpi3)
-                                        tableLayout!!.addView(row, tableLayout.childCount!!)
+                                        myTableLayout!!.addView(row, myTableLayout.childCount!!)
                                         break
                                     }
                                 }

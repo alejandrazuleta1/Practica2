@@ -31,6 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
                 android:text="@string/matr_culas"
                 android:textColor="@color/colortextaux" />
         </TableRow>
@@ -45,6 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
                 android:text="@string/ajustes"
                 android:textColor="@color/colortextaux" />
         </TableRow>
@@ -59,6 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
                 android:text="@string/matr_culasExt"
                 android:textColor="@color/colortextaux" />
         </TableRow>
@@ -73,6 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
                 android:text="@string/clases"
                 android:textColor="@color/colortextaux" />
         </TableRow>
@@ -87,6 +95,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
                 android:text="@string/exmsfinales"
                 android:textColor="@color/colortextaux" />
         </TableRow>
@@ -101,6 +111,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
                 android:text="@string/habilitaciones"
                 android:textColor="@color/colortextaux" />
         </TableRow>
@@ -115,6 +127,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
                 android:text="@string/validaciones"
                 android:textColor="@color/colortextaux" />
         </TableRow>
@@ -129,7 +143,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
                 android:text="@string/terminacionof"
+                android:paddingStart="8dp"
                 android:textColor="@color/colortextaux" />
         </TableRow>
 
@@ -143,7 +159,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
+                android:gravity="center_vertical"
                 android:text="@string/publicacionOferta"
+                android:paddingStart="8dp"
                 android:textColor="@color/colortextaux" />
         </TableRow>
 
