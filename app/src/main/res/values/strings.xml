@@ -84,4 +84,6 @@
     <string name="terminacionof">Terminación Oficial</string>
     <string name="publicacionOferta">Publicación de la Oferta</string>
     <string-array name="cursos_inscritos"/>
+    <string name="o">o</string>
+    <string name="ingresarcongoogle">Ingresa con Google</string>
 </resources>
