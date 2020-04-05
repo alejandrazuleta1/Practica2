@@ -146,7 +146,7 @@ class NotaFinalCursoFragment : Fragment(), AdapterView.OnItemSelectedListener,
                     sumporc=sumporc+porc.text.toString().toInt()
                 }
                 val df = DecimalFormat("#.##")
-                df.roundingMode = RoundingMode.CEILING
+                df.roundingMode = RoundingMode.HALF_UP
                 if (sumporc==100){
                     tv_nota.text = df.format(sumprods).toString()
                 }else{

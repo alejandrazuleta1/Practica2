@@ -81,7 +81,7 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                                             var aux = postsnapshot.child("evalyporc").child((i+1).toString()).child("porcentaje").getValue(Int::class.java)
                                             notaacum = notaacum + (cursoins.notas[i]*(aux!!)/100.0)
                                         }
-                                        df.roundingMode = RoundingMode.CEILING
+                                        df.roundingMode = RoundingMode.HALF_UP
                                         nota.setText(df.format(notaacum).toString(),TextView.BufferType.EDITABLE)
 
                                         nota.textSize = 14F
@@ -169,7 +169,7 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                     sumprods=sumprods+(cred.text.toString().toDouble()*nota.text.toString().toDouble())
                     sumcred=sumcred+cred.text.toString().toDouble()
                 }
-                df.roundingMode = RoundingMode.CEILING
+                df.roundingMode = RoundingMode.HALF_UP
                 tv_promedio.text = df.format(sumprods/sumcred).toString()
             }
         }

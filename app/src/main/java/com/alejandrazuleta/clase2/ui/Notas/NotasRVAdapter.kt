@@ -76,8 +76,8 @@ class NotasRVAdapter(
                                 acum = acum + (cursoinscrito.notas[i]*(aux!!)/100.0)
                                 porcentajeacum = porcentajeacum + aux
                             }
-                            val df = DecimalFormat("#.##")
-                            df.roundingMode = RoundingMode.CEILING
+                            val df = DecimalFormat("#.#")
+                            df.roundingMode = RoundingMode.HALF_UP
                             itemView.tv_acumulado.text = df.format(acum).toString()
                             val aux = porcentajeacum.toString() + "%"
                             itemView.tv_porc_evaluado.text = aux
