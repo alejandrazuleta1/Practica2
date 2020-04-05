@@ -100,6 +100,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                                 if(task.exception!!.message.equals("A network error (such as timeout, interrupted connection or unreachable host) has occurred.")){
                                     Toast.makeText(this,"Error de red",Toast.LENGTH_SHORT).show()
                                 }
+                                if(task.exception!!.message.equals("The password is invalid or the user does not have a password.")){
+                                    Toast.makeText(this,"Contraseña incorrecta",Toast.LENGTH_SHORT).show()
+                                }
                             }
                         }
                 }
