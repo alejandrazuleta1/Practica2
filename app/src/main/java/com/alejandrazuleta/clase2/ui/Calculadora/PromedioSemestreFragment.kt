@@ -22,6 +22,8 @@ import java.text.DecimalFormat
 
 class PromedioSemestreFragment : Fragment(), View.OnClickListener {
 
+    val df = DecimalFormat("#.##")
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,11 +61,11 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                                         row.setBackgroundResource(R.drawable.recttabla2)
 
                                         val lpi1 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                                            TableRow.LayoutParams.MATCH_PARENT,0.8f)
+                                            TableRow.LayoutParams.MATCH_PARENT,0.65f)
                                         val lpi2 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                                            TableRow.LayoutParams.MATCH_PARENT,0.1f)
+                                            TableRow.LayoutParams.MATCH_PARENT,0.2f)
                                         val lpi3 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                                            TableRow.LayoutParams.MATCH_PARENT,0.1f)
+                                            TableRow.LayoutParams.MATCH_PARENT,0.15f)
 
                                         val nota = EditText(activity!!.applicationContext)
                                         val cursoname = EditText(activity!!.applicationContext)
@@ -79,7 +81,8 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                                             var aux = postsnapshot.child("evalyporc").child((i+1).toString()).child("porcentaje").getValue(Int::class.java)
                                             notaacum = notaacum + (cursoins.notas[i]*(aux!!)/100.0)
                                         }
-                                        nota.setText(notaacum.toString(),TextView.BufferType.EDITABLE)
+                                        df.roundingMode = RoundingMode.CEILING
+                                        nota.setText(df.format(notaacum).toString(),TextView.BufferType.EDITABLE)
 
                                         nota.textSize = 14F
                                         nota.setCursorVisible(true)
@@ -166,7 +169,6 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                     sumprods=sumprods+(cred.text.toString().toDouble()*nota.text.toString().toDouble())
                     sumcred=sumcred+cred.text.toString().toDouble()
                 }
-                val df = DecimalFormat("#.##")
                 df.roundingMode = RoundingMode.CEILING
                 tv_promedio.text = df.format(sumprods/sumcred).toString()
             }

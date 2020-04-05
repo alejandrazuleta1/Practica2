@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.item_notas_rv.view.*
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 
 class NotasRVAdapter(
@@ -74,7 +76,9 @@ class NotasRVAdapter(
                                 acum = acum + (cursoinscrito.notas[i]*(aux!!)/100.0)
                                 porcentajeacum = porcentajeacum + aux
                             }
-                            itemView.tv_acumulado.text = acum.toString()
+                            val df = DecimalFormat("#.##")
+                            df.roundingMode = RoundingMode.CEILING
+                            itemView.tv_acumulado.text = df.format(acum).toString()
                             val aux = porcentajeacum.toString() + "%"
                             itemView.tv_porc_evaluado.text = aux
                             break
