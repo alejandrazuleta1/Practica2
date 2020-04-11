@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "489049939374-soddmhqnvgni7jm8ftutjdqv6lehrnmq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alejandrazuleta.clase2",
+            "certificate_hash": "ae0c492729dc74f35cf0055bfd1bf33cf7cc08b7"
+          }
+        },
+        {
           "client_id": "489049939374-vpmicvj5d6akfctcrmi6jvohbvkj4u2k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -36,7 +44,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "489049939374-eahs7d6sp8s064l6th3bde5f34ftuavo.apps.googleusercontent.com",
+              "client_id": "489049939374-9ejg76kd7k38bel17kk1r274qj1atff6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
