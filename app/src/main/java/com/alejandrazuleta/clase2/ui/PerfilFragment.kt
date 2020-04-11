@@ -4,21 +4,26 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.alejandrazuleta.clase2.LoginActivity
 import com.alejandrazuleta.clase2.Practica2
 import com.alejandrazuleta.clase2.R
 import com.alejandrazuleta.clase2.model.Usuario
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.content_perfil.*
 
 
 class PerfilFragment : Fragment() {
@@ -46,8 +51,8 @@ class PerfilFragment : Fragment() {
                         if(user!=null){
                             usuarioDAO.deleteUsuario(usuarioDAO.searchUsuario(user.uid))
                         }
-
                         auth.signOut()
+                        signOut()
                         goToLoginActivity()
                     }
                     setNegativeButton(
@@ -124,6 +129,18 @@ class PerfilFragment : Fragment() {
         return view
     }
 
+    private fun signOut() {
+        val gso =
+            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build()
+        val mGoogleSignInClient = GoogleSignIn.getClient(activity!!.applicationContext, gso);
+        mGoogleSignInClient.signOut()
+            .addOnCompleteListener(activity!!, OnCompleteListener<Void?> {
+                Log.d("SignOut", "Successful")
+            })
+    }
+
     /*
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.m_perfil, menu);
@@ -146,7 +163,6 @@ class PerfilFragment : Fragment() {
                         if(user!=null){
                             usuarioDAO.deleteUsuario(usuarioDAO.searchUsuario(user.uid))
                         }
-
                         auth.signOut()
                         goToLoginActivity()
                     }
