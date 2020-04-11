@@ -11,10 +11,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.GoogleApiClient
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
@@ -62,8 +59,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
     }
 
     private fun goToMainActivity() {
@@ -129,7 +124,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                 Log.w("SingInGoogle", "Google sign in failed", e)
-                Toast.makeText(this,"Google sign in failed",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Google sign in failed: "+e,Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -143,7 +138,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("TAG", "signInWithCredential:success")
-                    val user = auth.currentUser
                     goToMainActivity()
                 } else {
                     // If sign in fails, display a message to the user.

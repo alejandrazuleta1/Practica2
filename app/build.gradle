@@ -72,5 +72,5 @@ dependencies {
 
     implementation 'com.github.alamkanak:android-week-view:1.2.6'
 
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
 }
