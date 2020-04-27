@@ -1,4 +1,4 @@
-package com.alejandrazuleta.clase2.modelRoom
+package com.alejandrazuleta.clase2.model.room
 
 import androidx.room.*
 import com.alejandrazuleta.clase2.model.Usuario

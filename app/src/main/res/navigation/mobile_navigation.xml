@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/nav_horario"
-        android:name="com.alejandrazuleta.clase2.ui.HorarioFragment"
+        android:name="com.alejandrazuleta.clase2.ui.Horario.HorarioFragment"
         android:label="@string/menu_horario"
         tools:layout="@layout/fragment_horario" />
 

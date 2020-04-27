@@ -1,4 +1,4 @@
-package com.alejandrazuleta.clase2.ui
+package com.alejandrazuleta.clase2.ui.Eventos.recordatorios
 
 
 import android.os.Bundle
@@ -11,15 +11,14 @@ import com.alejandrazuleta.clase2.R
 /**
  * A simple [Fragment] subclass.
  */
-class HorarioFragment : Fragment() {
+class RecordatoriosFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_horario, container, false)
-
+        return inflater.inflate(R.layout.fragment_recordatorios, container, false)
     }
 
 

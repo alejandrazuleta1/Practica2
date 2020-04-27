@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.alejandrazuleta.clase2.R
+import com.alejandrazuleta.clase2.ui.Eventos.recordatorios.RecordatoriosFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.recordatorios,

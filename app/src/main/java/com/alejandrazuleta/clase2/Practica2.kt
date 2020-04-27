@@ -2,7 +2,7 @@ package com.alejandrazuleta.clase2
 
 import android.app.Application
 import androidx.room.Room
-import com.alejandrazuleta.clase2.modelRoom.UsuarioDataBase
+import com.alejandrazuleta.clase2.model.room.UsuarioDataBase
 
 class Practica2: Application() {
     companion object{
