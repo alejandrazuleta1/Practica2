@@ -86,4 +86,24 @@
     <string-array name="cursos_inscritos"/>
     <string name="o">o</string>
     <string name="ingresarcongoogle">Ingresa con Google</string>
+    <string name="espacio" />
+    <string name="l">L</string>
+    <string name="m">M</string>
+    <string name="w">W</string>
+    <string name="j">J</string>
+    <string name="v">V</string>
+    <string name="_6_am">6 am</string>
+    <string name="_10_am">10 am</string>
+    <string name="_7_am">7 am</string>
+    <string name="_8_am">8 am</string>
+    <string name="_9_am">9 am</string>
+    <string name="_12_am">12 am</string>
+    <string name="_11_am">11 am</string>
+    <string name="_1_pm">1 pm</string>
+    <string name="_2_pm">2 pm</string>
+    <string name="_4_pm">4 pm</string>
+    <string name="_6_pm">6 pm</string>
+    <string name="_7_pm">7 pm</string>
+    <string name="_9_pm">9 pm</string>
+    <string name="_10_pm">10 pm</string>
 </resources>

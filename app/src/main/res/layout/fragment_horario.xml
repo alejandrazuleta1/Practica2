@@ -1,26 +1,964 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
     tools:context=".ui.Horario.HorarioFragment">
 
-    <com.alamkanak.weekview.WeekView
-        android:id="@+id/weekView"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:eventTextColor="@android:color/white"
-        app:textSize="12sp"
-        app:hourHeight="60dp"
-        app:headerColumnPadding="8dp"
-        app:headerColumnTextColor="#8f000000"
-        app:headerRowPadding="12dp"
-        app:columnGap="8dp"
-        app:noOfVisibleDays="3"
-        app:headerRowBackgroundColor="#ffefefef"
-        app:dayBackgroundColor="#05000000"
-        app:todayBackgroundColor="#1848adff"
-        app:headerColumnBackground="#ffffffff"/>
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight=".1428571429"
+                android:text="@string/_10_am"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_weight=".1428571429"
+                android:text="@string/l"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/m"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/w"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/j"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/v"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginLeft="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/S"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_6_am"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_00"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_01"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_02"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_03"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_04"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_05"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_7_am"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_10"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_11"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_12"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_13"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_14"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_15"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_8_am"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_20"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_21"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_22"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_23"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_24"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_25"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_9_am"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_30"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_31"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_32"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_33"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_34"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_35"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_10_am"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_40"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_41"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_42"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_43"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_44"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_45"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_11_am"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_60"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_61"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_62"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_63"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_64"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_65"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_12_am"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_70"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_71"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_72"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_73"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_74"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_75"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_1_pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_80"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_81"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_82"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_83"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_84"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_85"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_2_pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_90"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_91"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_92"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_93"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_94"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_95"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="3 pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_100"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_101"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_102"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_103"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_104"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_105"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_4_pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_110"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_111"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_112"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_113"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_114"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_115"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="5 pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_120"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_121"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_122"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_123"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_124"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_125"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_6_pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_130"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_131"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_132"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_133"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_134"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_135"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_7_pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_140"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_141"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_142"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_143"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_144"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_145"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="8 pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_150"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_151"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_152"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_153"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_154"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_155"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_9_pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_160"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_161"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_162"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_163"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_164"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_165"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr17"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/_10_pm"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/bt_170"
+                android:layout_height="30dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_171"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_172"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_173"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_174"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+
+            <Button
+                android:id="@+id/bt_175"
+                android:layout_height="30dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:background="@color/backgroundHorario" />
+        </TableRow>
+
+
+    </TableLayout>
+</ScrollView>
