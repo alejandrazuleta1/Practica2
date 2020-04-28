@@ -11,6 +11,14 @@
     <color name="colortextnotas">#1F2D3D</color>
     <color name="dias">#8492A6</color>
     <color name="backgroundHorario">#C0CCDA</color>
+    <color name="clase1">#FF9800</color>
+    <color name="clase2">#CDDC39</color>
+    <color name="clase3">#FFC107</color>
+    <color name="clase4">#2196F3</color>
+    <color name="clase5">#673AB7</color>
+    <color name="clase6">#F44336</color>
+    <color name="clase7">#009688</color>
+    <color name="clase8">#8BC34A</color>
     <item name="black" type="color">#000000</item>
     <item name="navy" type="color">	#000080</item>
     <item name="darkblue" type="color">#00008b</item>
