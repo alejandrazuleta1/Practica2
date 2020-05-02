@@ -83,7 +83,7 @@
     <string name="validaciones">Validaciones</string>
     <string name="terminacionof">Terminación Oficial</string>
     <string name="publicacionOferta">Publicación de la Oferta</string>
-    <string-array name="cursos_inscritos"/>
+    <string-array name="cursos_inscritos" />
     <string name="o">o</string>
     <string name="ingresarcongoogle">Ingresa con Google</string>
     <string name="espacio" />
@@ -109,4 +109,7 @@
     <string name="_8_pm">8 pm</string>
     <string name="_9_pm">9 pm</string>
     <string name="_10_pm">10 pm</string>
+    <string name="aula">Aula:</string>
+    <string name="profesor">Profesor:</string>
+    <string name="cr_ditos">Créditos</string>
 </resources>
