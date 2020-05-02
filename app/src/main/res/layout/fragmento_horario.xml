@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="8dp"
+    tools:context=".ui.Horario.HorarioFragment">
+
+    <TableLayout
+        android:id="@+id/tl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TableRow
+            android:id="@+id/tr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/L"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_weight=".1428571429"
+                android:text="@string/l"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/m"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/w"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/j"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginStart="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/v"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_marginLeft="1dp"
+                android:layout_weight=".1428571429"
+                android:text="@string/S"
+                android:textAlignment="center" />
+        </TableRow>
+    </TableLayout>
+
+    <GridView
+        android:id="@+id/gridview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tl1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:columnWidth="100dp"
+        android:numColumns="7"
+        android:horizontalSpacing="2dp"
+        android:stretchMode="columnWidth"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

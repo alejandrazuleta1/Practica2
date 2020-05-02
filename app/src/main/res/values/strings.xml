@@ -101,9 +101,12 @@
     <string name="_11_am">11 am</string>
     <string name="_1_pm">1 pm</string>
     <string name="_2_pm">2 pm</string>
+    <string name="_3_pm">3 pm</string>
     <string name="_4_pm">4 pm</string>
+    <string name="_5_pm">5 pm</string>
     <string name="_6_pm">6 pm</string>
     <string name="_7_pm">7 pm</string>
+    <string name="_8_pm">8 pm</string>
     <string name="_9_pm">9 pm</string>
     <string name="_10_pm">10 pm</string>
 </resources>
