@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_fechacitacion.*
+import kotlinx.android.synthetic.main.fragment_fechacitacion.view.*
 
 class FechacitacionFragment : Fragment() {
 
@@ -24,21 +25,14 @@ class FechacitacionFragment : Fragment() {
     ): View? {
         val view =inflater.inflate(R.layout.fragment_fechacitacion, container, false)
 
-        return view
-    }
-
-    override fun onStart() {
-        super.onStart()
         var miUsuario : Usuario?
         val usuarioDAO = Practica2.database.UsuarioDAO()
         if (usuarioDAO.loadAllUsers().size>0) {
             //poner datos guardados en room
             miUsuario = usuarioDAO.loadAllUsers()[0]
             //mostrar datos guardados de ROOM si hay
-            tv_fecha.text = miUsuario.citacion
+            view.tv_fecha.text = miUsuario.citacion
         }
-
-
 
         val auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
@@ -53,7 +47,7 @@ class FechacitacionFragment : Fragment() {
                     for (postSnapshot in dataSnapshot.children) {
                         if(postSnapshot.key==user.uid){
                             miUsuario= postSnapshot.getValue(Usuario::class.java)
-                            tv_fecha.text = miUsuario!!.citacion
+                            view.tv_fecha.text = miUsuario!!.citacion
                             break
                         }
                     }
@@ -65,7 +59,8 @@ class FechacitacionFragment : Fragment() {
             })
         }
 
-    }
 
+        return view
+    }
 
 }

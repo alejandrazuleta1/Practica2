@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.Horario.HorarioDetalleActivity"></activity>
+        <activity
+            android:name=".ui.Eventos.recordatorios.AddEventActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ui.Horario.HorarioDetalleActivity" />
         <activity android:name=".ui.Notas.NotaDellateActivity" />
         <activity
             android:name=".MainActivity"
