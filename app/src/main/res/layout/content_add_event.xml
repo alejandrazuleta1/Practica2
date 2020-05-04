@@ -21,6 +21,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tied_titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/agregar_t_tulo"
@@ -45,10 +46,12 @@
                 app:srcCompat="@drawable/ic_short_text_black_48dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tied_descripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/agregar_descripci_n"/>
@@ -58,93 +61,38 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             android:id="@+id/ll_fechas"
             android:gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_descripcion">
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_margin="2dp"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_weight="0.1"
                 app:srcCompat="@drawable/ic_schedule_black_48dp" />
 
-            <LinearLayout
-                android:layout_weight="0.9"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tv_fecha"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_weight="0.5"
+                android:textAlignment="center"
+                android:text="fecha"
+                android:textSize="18sp" />
 
-                <LinearLayout
-                    android:id="@+id/ll_fechainicio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:text="Desde: "
-                        android:textSize="18sp"/>
-
-                    <TextView
-                        android:id="@+id/tv_fechainicio"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:textAlignment="center"
-                        android:text="fecha inicio"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/tv_horainicio"
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:text="hora inicio"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ll_fechafin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:text="Hasta: "
-                        android:textSize="18sp"/>
-
-                    <TextView
-                        android:id="@+id/tv_fechafin"
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:text="fecha final"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/tv_horafin"
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:text="hora final"
-                        android:textSize="18sp" />
-                </LinearLayout>
+            <TextView
+                android:id="@+id/tv_hora"
+                android:textAlignment="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="hora"
+                android:textSize="18sp" />
             </LinearLayout>
-        </LinearLayout>
 
         <TextView
             android:id="@id/textView"

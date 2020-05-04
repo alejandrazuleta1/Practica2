@@ -3,6 +3,8 @@
     package="com.alejandrazuleta.clase2">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:name=".Practica2"
@@ -12,9 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.Eventos.recordatorios.DetalleEventoActivity"></activity>
         <activity
             android:name=".ui.Eventos.recordatorios.AddEventActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.Horario.HorarioDetalleActivity" />
         <activity android:name=".ui.Notas.NotaDellateActivity" />
         <activity

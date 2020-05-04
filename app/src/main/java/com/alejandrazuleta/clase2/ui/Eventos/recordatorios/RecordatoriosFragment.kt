@@ -1,6 +1,7 @@
 package com.alejandrazuleta.clase2.ui.Eventos.recordatorios
 
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alejandrazuleta.clase2.R
@@ -56,7 +58,20 @@ class RecordatoriosFragment : Fragment() {
             startActivityForResult(intent,123)
         }
 
+
+
+
         return root
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode==123 && resultCode==Activity.RESULT_CANCELED){
+            Log.d("resultado","cancelado")
+        }
+        if(requestCode==1 && resultCode==Activity.RESULT_OK) {
+            Log.d("resultado","guardado")
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onResume() {
@@ -69,17 +84,21 @@ class RecordatoriosFragment : Fragment() {
         val myRef = database.getReference("eventos")
 
         alleventos.clear()
+        recordatoriosRVAdapter.notifyDataSetChanged()
 
         // Read from the database
         myRef.addValueEventListener(object : ValueEventListener {
+
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+                alleventos.clear()
                 for (snapshot in dataSnapshot.children) {
-                    if(snapshot.child("idusuario").getValue()==user!!.uid){
-                        var evento = snapshot.child("idusuario").getValue(evento::class.java)
+                    if(snapshot.child("idu").getValue()==user!!.uid){
+                        var evento = snapshot.getValue(evento::class.java)
                         alleventos.add(evento!!)
                     }
                 }
                 recordatoriosRVAdapter.notifyDataSetChanged()
+                Log.d("eventos",alleventos[0].nombre)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -89,6 +108,8 @@ class RecordatoriosFragment : Fragment() {
         })
 
     }
+
+
 
 
 }

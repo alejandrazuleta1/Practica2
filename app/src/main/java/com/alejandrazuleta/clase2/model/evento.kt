@@ -11,9 +11,8 @@ class evento(
     @ColumnInfo(name ="idusuario") val idu: String = "",
     @ColumnInfo(name ="nombre") val nombre: String = "",
     @ColumnInfo(name ="descripcion") val descripcion: String = "",
-    @ColumnInfo(name ="fechainicio") val fechai: String = "",
-    @ColumnInfo(name ="horainicio") val horai: String = "",
-    @ColumnInfo(name ="fechafinal") val fechaf: String = "",
-    @ColumnInfo(name ="horafinal") val horaf: String = "",
-    @ColumnInfo(name ="nombrecurso") val nombrecurso: String = ""
+    @ColumnInfo(name ="fecha") val fecha: String = "",
+    @ColumnInfo(name ="hora") val hora: String = "",
+    @ColumnInfo(name ="nombrecurso") val nombrecurso: String = "",
+    @ColumnInfo(name ="notificacion") val notificacion: Boolean = true
 ):  Serializable

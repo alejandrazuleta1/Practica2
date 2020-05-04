@@ -11,7 +11,8 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.alejandrazuleta.clase2"
-        minSdkVersion 19
+        minSdkVersion 21
+        multiDexEnabled true
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -73,4 +74,13 @@ dependencies {
     implementation 'com.github.alamkanak:android-week-view:1.2.6'
 
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
+
+    implementation 'com.google.api-client:google-api-client:1.23.0'
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+    implementation 'com.google.apis:google-api-services-calendar:v3-rev305-1.23.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
 }

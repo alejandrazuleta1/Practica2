@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".ui.Eventos.recordatorios.DetalleEventoActivity">
+
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="20sp"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/tv_fechahora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="15sp"
+        tools:text="Date and Time" />
+
+    <TextView
+        android:id="@+id/tv_curso"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="15sp"
+        tools:text="@string/curso" />
+
+    <TextView
+        android:id="@+id/tv_descripcion"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="15sp"
+        tools:text="@string/descripcion" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar"
+        android:id="@+id/bt_eliminar"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent"
+        android:minHeight="35dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        />
+
+
+</LinearLayout>
