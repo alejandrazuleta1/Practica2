@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="56dp"
     android:background="@color/white"
     android:padding="8dp"
     tools:context=".ui.Horario.HorarioFragment">
@@ -12,8 +13,8 @@
         android:id="@+id/tl1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -68,16 +69,15 @@
 
     <GridView
         android:id="@+id/gridview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:columnWidth="100dp"
+        android:gravity="center"
+        android:horizontalSpacing="2dp"
+        android:numColumns="7"
+        android:stretchMode="columnWidth"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tl1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:columnWidth="100dp"
-        android:numColumns="7"
-        android:horizontalSpacing="2dp"
-        android:stretchMode="columnWidth"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tl1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

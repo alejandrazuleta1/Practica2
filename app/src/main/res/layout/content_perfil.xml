@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/avatar"
+        android:id="@+id/im_avatar"
         android:layout_width="167dp"
         android:layout_height="136dp"
         android:layout_marginTop="125dp"
@@ -26,7 +26,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/avatar" />
+        app:layout_constraintTop_toBottomOf="@id/im_avatar" />
 
     <TextView
         android:id="@+id/tv_facultad"

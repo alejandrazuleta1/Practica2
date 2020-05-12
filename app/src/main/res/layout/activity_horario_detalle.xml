@@ -18,7 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="80dp"
-            android:text="@string/profesor" />
+            android:text="@string/profesor"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_profesor"
@@ -37,7 +38,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="80dp"
-            android:text="@string/cr_ditos" />
+            android:text="@string/cr_ditos"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_creditos"
@@ -55,7 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="80dp"
-            android:text="@string/aula" />
+            android:text="@string/aula"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_aula"

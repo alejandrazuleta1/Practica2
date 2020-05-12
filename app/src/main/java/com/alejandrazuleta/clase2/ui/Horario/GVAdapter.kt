@@ -29,7 +29,7 @@ class GVAdapter(context: Context, list: ArrayList<String>, cursosList: List<curs
         val itemView = LayoutInflater.from(context).inflate(R.layout.itemgrid, parent, false)
         itemView.textView.text = list.get(position)
 
-        if (list.get(position).isNotEmpty()){
+        if (list.get(position).isNotEmpty() && list.get(position).length>4){
             itemView.setOnClickListener{
                 val intent = Intent(context, HorarioDetalleActivity::class.java)
                 intent.putExtra("sesion",sesionList[position])

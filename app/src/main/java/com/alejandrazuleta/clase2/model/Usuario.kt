@@ -13,5 +13,6 @@ class Usuario(
     @ColumnInfo(name ="promedio") val promedio: Double = 0.0,
     @ColumnInfo(name ="avance") val avance: Int = 0,
     @ColumnInfo(name ="total") val total: Int = 0,
-    @ColumnInfo(name ="citacion") val citacion: List<String> = arrayListOf<String>()
+    @ColumnInfo(name ="citacion") val citacion: List<String> = arrayListOf<String>(),
+    @ColumnInfo(name ="urlFoto") val urlFoto: String = ""
 )
