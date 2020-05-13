@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.alejandrazuleta.clase2.Practica2
 import com.alejandrazuleta.clase2.R
@@ -37,9 +38,11 @@ class FechacitacionFragment : Fragment(), View.OnClickListener {
             //poner datos guardados en room
             miUsuario = usuarioDAO.loadAllUsers()[0]
             //mostrar datos guardados de ROOM si hay
-            view.tv_tanda.text = miUsuario.citacion[0]
-            view.tv_fecha.text = miUsuario.citacion[1]
-            view.tv_hora.text = miUsuario.citacion[2]
+            if(miUsuario.citacion.size>0) {
+                view.tv_tanda.text = miUsuario.citacion[0]
+                view.tv_fecha.text = miUsuario.citacion[1]
+                view.tv_hora.text = miUsuario.citacion[2]
+            }
         }
 
         val auth = FirebaseAuth.getInstance()
@@ -55,9 +58,11 @@ class FechacitacionFragment : Fragment(), View.OnClickListener {
                     for (postSnapshot in dataSnapshot.children) {
                         if(postSnapshot.key==user.uid){
                             miUsuario= postSnapshot.getValue(Usuario::class.java)
-                            view.tv_tanda.text = miUsuario!!.citacion[0]
-                            view.tv_fecha.text = miUsuario!!.citacion[1]
-                            view.tv_hora.text = miUsuario!!.citacion[2]
+                            if(miUsuario!!.citacion.size>0) {
+                                view.tv_tanda.text = miUsuario!!.citacion[0]
+                                view.tv_fecha.text = miUsuario!!.citacion[1]
+                                view.tv_hora.text = miUsuario!!.citacion[2]
+                            }
                             break
                         }
                     }
@@ -74,25 +79,47 @@ class FechacitacionFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        val time = tv_hora.text.split(":")
-        val date = tv_fecha.text.split("/")
+        if(tv_hora.text.isNotEmpty() && tv_fecha.text.isNotEmpty()) {
+            val time = tv_hora.text.split(":")
+            val date = tv_fecha.text.split("/")
 
-        val startMillis: Long = Calendar.getInstance().run {
-            set(date[2].toInt(), date[1].toInt(), date[0].toInt(), time[0].toInt(),time[1].toInt())
-            timeInMillis
+            val startMillis: Long = Calendar.getInstance().run {
+                set(
+                    date[2].toInt(),
+                    date[1].toInt(),
+                    date[0].toInt(),
+                    time[0].toInt(),
+                    time[1].toInt()
+                )
+                timeInMillis
+            }
+            val endMillis: Long = Calendar.getInstance().run {
+                set(
+                    date[2].toInt(),
+                    date[1].toInt(),
+                    date[0].toInt(),
+                    time[0].toInt() + 1,
+                    time[1].toInt()
+                )
+                timeInMillis
+            }
+            val intent = Intent(Intent.ACTION_INSERT)
+                .setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startMillis)
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endMillis)
+                .putExtra(CalendarContract.Events.TITLE, "Inscripcion Cursos UdeA")
+                .putExtra(
+                    CalendarContract.Events.EVENT_LOCATION,
+                    "Cualquier dispositivo conectado a internet"
+                )
+                .putExtra(
+                    CalendarContract.Events.AVAILABILITY,
+                    CalendarContract.Events.AVAILABILITY_BUSY
+                )
+            startActivity(intent)
+        }else{
+            Toast.makeText(activity!!.applicationContext,"Usted no tiene citaciones asignadas",Toast.LENGTH_SHORT).show()
         }
-        val endMillis: Long = Calendar.getInstance().run {
-            set(date[2].toInt(), date[1].toInt(), date[0].toInt(), time[0].toInt()+1,time[1].toInt())
-            timeInMillis
-        }
-        val intent = Intent(Intent.ACTION_INSERT)
-            .setData(CalendarContract.Events.CONTENT_URI)
-            .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startMillis)
-            .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endMillis)
-            .putExtra(CalendarContract.Events.TITLE, "Inscripcion Cursos UdeA")
-            .putExtra(CalendarContract.Events.EVENT_LOCATION, "Cualquier dispositivo conectado a internet")
-            .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
-        startActivity(intent)
     }
 
 }

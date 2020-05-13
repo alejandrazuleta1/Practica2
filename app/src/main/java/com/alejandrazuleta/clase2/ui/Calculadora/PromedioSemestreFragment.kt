@@ -60,12 +60,12 @@ class PromedioSemestreFragment : Fragment(), View.OnClickListener {
                                         row.setLayoutParams(lp)
                                         row.setBackgroundResource(R.drawable.recttabla2)
 
-                                        val lpi1 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                                            TableRow.LayoutParams.MATCH_PARENT,0.65f)
-                                        val lpi2 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                                            TableRow.LayoutParams.MATCH_PARENT,0.2f)
-                                        val lpi3 = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                                            TableRow.LayoutParams.MATCH_PARENT,0.15f)
+                                        val lpi1 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
+                                            TableRow.LayoutParams.MATCH_PARENT,0.5f)
+                                        val lpi2 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
+                                            TableRow.LayoutParams.MATCH_PARENT,0.25f)
+                                        val lpi3 = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
+                                            TableRow.LayoutParams.MATCH_PARENT,0.25f)
 
                                         val nota = EditText(activity!!.applicationContext)
                                         val cursoname = EditText(activity!!.applicationContext)

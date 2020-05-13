@@ -35,7 +35,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_weight="0.65"
+                    android:layout_weight="0.5"
                     android:fontFamily="@font/lato"
                     android:padding="10dip"
                     android:text="@string/curso"
@@ -45,7 +45,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_weight="0.2"
+                    android:layout_weight="0.25"
                     android:fontFamily="@font/lato"
                     android:padding="10dip"
                     android:text="@string/creditos"
@@ -56,7 +56,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.15"
+                    android:layout_weight="0.25"
                     android:fontFamily="@font/lato"
                     android:padding="10dip"
                     android:text="@string/nota"
@@ -72,10 +72,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:background="@color/colorAccent"
+            android:fontFamily="@font/lato"
             android:minHeight="35dp"
             android:text="@string/calcular"
             android:textAllCaps="false"
             android:textColor="@color/white"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tableLayout" />

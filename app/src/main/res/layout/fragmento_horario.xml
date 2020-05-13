@@ -20,6 +20,7 @@
 
         <TableRow
             android:id="@+id/tr"
+            android:background="@color/backgroundHorario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
