@@ -45,14 +45,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         bt_login.setOnClickListener(this)
-        bt_loginGoogle.setOnClickListener(this)
+        //bt_loginGoogle.setOnClickListener(this)
 
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        /*val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
+        googleSignInClient = GoogleSignIn.getClient(this, gso)*/
 
 
     }
@@ -74,10 +74,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 var passwordDig = et_password.text.toString()
 
                 if(emailDig=="") {
-                    Toast.makeText(this, "Escriba el email y la contraseña", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Escriba el usuario y la contraseña", Toast.LENGTH_SHORT).show()
                 }else{
-
-                    auth.signInWithEmailAndPassword(emailDig, passwordDig)
+                    auth.signInWithEmailAndPassword(emailDig+"@udea.edu.co", passwordDig)
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
                                 // Sign in success, update UI with the signed-in user's information
@@ -102,7 +101,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                         }
                 }
             }
-            R.id.bt_loginGoogle->signIn()
+            //R.id.bt_loginGoogle->signIn()
         }
     }
 

@@ -27,13 +27,13 @@ class GVAdapter(context: Context, list: ArrayList<HashMap<String,Int>>, cursosLi
         this.sesionList = sesionList
     }
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint("ResourceAsColor", "ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
         val itemView = LayoutInflater.from(context).inflate(R.layout.itemgrid, parent, false)
         itemView.textView.text = list.get(position).keys.elementAt(0)
         itemView.textView.setTextColor(Color.BLACK)
         when(list.get(position).values.elementAt(0)){
-            0->itemView.setBackgroundColor(Color.parseColor("#f5fffa"))
+            0->itemView.setBackgroundColor(Color.TRANSPARENT)
             1->itemView.setBackgroundColor(Color.TRANSPARENT)
             2->itemView.setBackgroundColor(Color.parseColor("#FF9800"))
             3->itemView.setBackgroundColor(Color.parseColor("#FFC107"))

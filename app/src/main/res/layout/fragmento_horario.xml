@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="56dp"
-    android:background="@color/backgroundHorario"
     android:padding="8dp"
     tools:context=".ui.Horario.HorarioFragment">
 
@@ -20,7 +19,6 @@
 
         <TableRow
             android:id="@+id/tr"
-            android:background="@color/backgroundHorario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

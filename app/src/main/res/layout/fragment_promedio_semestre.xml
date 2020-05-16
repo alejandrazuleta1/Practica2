@@ -40,7 +40,7 @@
                     android:padding="10dip"
                     android:text="@string/curso"
                     android:textColor="@android:color/white"
-                    android:textSize="12sp"
+                    android:textSize="10sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -50,7 +50,7 @@
                     android:padding="10dip"
                     android:text="@string/creditos"
                     android:textColor="@android:color/white"
-                    android:textSize="12sp"
+                    android:textSize="10sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -61,7 +61,7 @@
                     android:padding="10dip"
                     android:text="@string/nota"
                     android:textColor="@android:color/white"
-                    android:textSize="12sp"
+                    android:textSize="10sp"
                     android:textStyle="bold" />
             </TableRow>
         </TableLayout>

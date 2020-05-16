@@ -67,7 +67,7 @@ class PerfilFragment : Fragment(), ImageProfilFragment.NoticeDialogListener {
                             usuarioDAO.deleteUsuario(usuarioDAO.searchUsuario(user.uid))
                         }
                         auth.signOut()
-                        signOut()
+                        //signOut() ya no hay login con google
                         goToLoginActivity()
                     }
                     setNegativeButton(
