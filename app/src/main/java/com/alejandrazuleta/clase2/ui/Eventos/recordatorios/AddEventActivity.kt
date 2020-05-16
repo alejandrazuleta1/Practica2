@@ -178,7 +178,7 @@ class AddEventActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
             tv_fecha.text.toString(),
             tv_hora.text.toString(),
             mcurso,
-            true
+            false
         )
         myRef.child(idEvento).setValue(evento)
     }

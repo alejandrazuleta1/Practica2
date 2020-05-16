@@ -30,6 +30,8 @@ class RecordatoriosFragment : Fragment() {
     val user = auth.currentUser
 
     val alleventos: MutableList<evento> = mutableListOf()
+    val eventosNoRealizados : MutableList<evento> = mutableListOf()
+    val eventosRealizados : MutableList<evento> = mutableListOf()
     lateinit var recordatoriosRVAdapter: RecordatoriosRVAdapter
 
     override fun onCreateView(
@@ -41,7 +43,7 @@ class RecordatoriosFragment : Fragment() {
 
         recordatoriosRVAdapter = RecordatoriosRVAdapter(
             activity!!.applicationContext,
-            alleventos as ArrayList<evento>
+            eventosNoRealizados as ArrayList<evento>
         )
 
         root.rv_recordatorios.layoutManager = LinearLayoutManager(
@@ -58,9 +60,21 @@ class RecordatoriosFragment : Fragment() {
             startActivityForResult(intent,123)
         }
 
+        root.fab_completados.setOnClickListener {
+            recordatoriosRVAdapter = RecordatoriosRVAdapter(
+                activity!!.applicationContext,
+                eventosRealizados as ArrayList<evento>
+            )
+            root.rv_recordatorios.adapter = recordatoriosRVAdapter
+        }
 
-
-
+        root.fab_pendientes.setOnClickListener {
+            recordatoriosRVAdapter = RecordatoriosRVAdapter(
+                activity!!.applicationContext,
+                eventosNoRealizados as ArrayList<evento>
+            )
+            root.rv_recordatorios.adapter = recordatoriosRVAdapter
+        }
         return root
     }
 
@@ -84,6 +98,8 @@ class RecordatoriosFragment : Fragment() {
         val myRef = database.getReference("eventos")
 
         alleventos.clear()
+        eventosRealizados.clear()
+        eventosNoRealizados.clear()
         recordatoriosRVAdapter.notifyDataSetChanged()
 
         // Read from the database
@@ -91,10 +107,14 @@ class RecordatoriosFragment : Fragment() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 alleventos.clear()
+                eventosRealizados.clear()
+                eventosNoRealizados.clear()
                 for (snapshot in dataSnapshot.children) {
                     if(snapshot.child("idu").getValue()==user!!.uid){
-                        var evento = snapshot.getValue(evento::class.java)
-                        alleventos.add(evento!!)
+                        val evento = snapshot.getValue(evento::class.java)
+                        if(evento!!.notificacion) eventosRealizados.add(evento)
+                        else eventosNoRealizados.add(evento)
+                        alleventos.add(evento)
                     }
                 }
                 recordatoriosRVAdapter.notifyDataSetChanged()

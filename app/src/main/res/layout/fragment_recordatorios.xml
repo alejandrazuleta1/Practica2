@@ -16,19 +16,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_newEvent"
+    <com.github.clans.fab.FloatingActionMenu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/ic_add_black_48dp"
-        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:focusable="true" />
+        app:menu_openDirection="up"
+        app:menu_colorNormal="@color/colorAccent"
+        app:menu_colorPressed="@color/colorAccent"
+        app:menu_colorRipple="@color/colorPrimaryText"
+        app:menu_labels_style="@style/MenuLabelsStyle"
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_newEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_black_24dp"
+            android:tint="@color/white"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorAccent"
+            app:fab_colorRipple="@color/colorPrimaryText"
+            app:fab_size="mini"
+            app:fab_label="Agregar recordatorio" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_completados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_playlist_add_check_black_24dp"
+            android:tint="@color/white"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorAccent"
+            app:fab_colorRipple="@color/colorPrimaryText"
+            app:fab_size="mini"
+            app:fab_label="Mostrar terminados" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_pendientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_playlist_add_black_24dp"
+            android:tint="@color/white"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorAccent"
+            app:fab_colorRipple="@color/colorPrimaryText"
+            app:fab_size="mini"
+            app:fab_label="Mostrar pendientes" />
+
+    </com.github.clans.fab.FloatingActionMenu>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
