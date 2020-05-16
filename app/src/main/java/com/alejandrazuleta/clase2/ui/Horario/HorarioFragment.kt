@@ -281,8 +281,10 @@ class HorarioFragment : Fragment() {
         sesionlist.add(auxsesion)
         sesionlist.add(auxsesion)
         sesionlist.add(auxsesion)
+        sesionlist.add(auxsesion)
 
         val auxcurso:curso = curso()
+        cursolist.add(auxcurso)
         cursolist.add(auxcurso)
         cursolist.add(auxcurso)
         cursolist.add(auxcurso)
@@ -475,8 +477,8 @@ class HorarioFragment : Fragment() {
         val aux = nombre + " " + aula
 
         lista2[posj] = hashMapOf(aux to auxcolor)
-        sesionlist.add(posj,sesion!!)
-        cursolist.add(posj,curso!!)
+        sesionlist[posj]=sesion!!
+        cursolist[posj]=curso!!
         for (i in 1..duracion-1){
             lista2[posj+7*i]= hashMapOf(" " to auxcolor)
             Log.d("color",posj.toString() + lista2[posj+7*i].keys.elementAt(0) + lista2[posj+7*i].values.elementAt(0).toString())

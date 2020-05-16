@@ -118,7 +118,7 @@ class RecordatoriosFragment : Fragment() {
                     }
                 }
                 recordatoriosRVAdapter.notifyDataSetChanged()
-                Log.d("eventos",alleventos[0].nombre)
+                //Log.d("eventos",alleventos[0].nombre)
             }
 
             override fun onCancelled(error: DatabaseError) {
