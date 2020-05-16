@@ -173,6 +173,7 @@
             android:focusable="true"
             android:src="@android:drawable/ic_lock_power_off"
             android:tint="@color/white"
+            android:background="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

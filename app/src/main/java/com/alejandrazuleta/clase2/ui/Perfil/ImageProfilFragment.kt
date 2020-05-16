@@ -130,6 +130,8 @@ class ImageProfilFragment : DialogFragment() {
                         1001
                     )
                     return@setOnClickListener
+                }else{
+                    fileChooser()
                 }
             }
 
@@ -172,12 +174,6 @@ class ImageProfilFragment : DialogFragment() {
         val intent : Intent =Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "image/*"
         startActivityForResult(intent, 1000)
-    }
-
-    private fun getFileExtension(uri: Uri) : String? {
-        val contentResolver : ContentResolver = activity!!.contentResolver
-        val mimeTypeMap = MimeTypeMap.getSingleton()
-        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri))
     }
 
     //handle result of picked image

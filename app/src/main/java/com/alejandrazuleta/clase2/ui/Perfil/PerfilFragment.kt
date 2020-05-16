@@ -37,7 +37,6 @@ import java.util.*
 
 class PerfilFragment : Fragment(), ImageProfilFragment.NoticeDialogListener {
 
-    lateinit var imagename : String
     lateinit var imageUri : Uri
     lateinit var mstorageReference : StorageReference
     lateinit var auth : FirebaseAuth
@@ -52,7 +51,7 @@ class PerfilFragment : Fragment(), ImageProfilFragment.NoticeDialogListener {
         val view = inflater.inflate(R.layout.fragment_perfil, container, false)
         val floatingActionButton : FloatingActionButton = view.findViewById(R.id.fa_cerrarsesion)
 
-        floatingActionButton.setOnClickListener{
+        floatingActionButton.setOnClickListener {
             val alertDialog: AlertDialog? = activity.let {
                 val builder = AlertDialog.Builder(it)
                 builder.apply {
@@ -64,7 +63,7 @@ class PerfilFragment : Fragment(), ImageProfilFragment.NoticeDialogListener {
                         val auth = FirebaseAuth.getInstance()
                         val usuarioDAO = Practica2.database.UsuarioDAO()
                         val user = auth.currentUser
-                        if(user!=null){
+                        if (user != null) {
                             usuarioDAO.deleteUsuario(usuarioDAO.searchUsuario(user.uid))
                         }
                         auth.signOut()
@@ -80,7 +79,6 @@ class PerfilFragment : Fragment(), ImageProfilFragment.NoticeDialogListener {
             }
             alertDialog?.show()
         }
-        //setHasOptionsMenu(true)
 
         val mytv_nombre :TextView = view.findViewById(R.id.tv_nombre)
         val mytv_facultad :TextView =view.findViewById(R.id.tv_facultad)
@@ -123,14 +121,6 @@ class PerfilFragment : Fragment(), ImageProfilFragment.NoticeDialogListener {
                 for (postSnapshot in dataSnapshot.children) {
                     if(postSnapshot.key==user.uid){
                         miUsuario= postSnapshot.getValue(Usuario::class.java)
-                        mytv_nombre!!.text = miUsuario!!.nombre
-                        var aux = "Facultad de " + miUsuario!!.facultad
-                        mytv_facultad.text = aux
-                        mytv_programa.text = miUsuario!!.programa
-                        mytv_numprom.text = miUsuario!!.promedio.toString()
-                        aux = (miUsuario!!.avance*100/miUsuario!!.total).toString()+"%"
-                        mytv_numavance.text = aux
-                        myAvanceBar.progress = miUsuario!!.avance*100/miUsuario!!.total
                         if (miUsuario!!.urlFoto.equals("default")){
                             userImage.setImageResource(R.drawable.avatar1)
                         }else {
@@ -139,6 +129,14 @@ class PerfilFragment : Fragment(), ImageProfilFragment.NoticeDialogListener {
                             Glide.with(activity!!.applicationContext).load(personImage)
                                 .apply(RequestOptions.circleCropTransform()).into(userImage)
                         }
+                        mytv_nombre!!.text = miUsuario!!.nombre
+                        var aux = "Facultad de " + miUsuario!!.facultad
+                        mytv_facultad.text = aux
+                        mytv_programa.text = miUsuario!!.programa
+                        mytv_numprom.text = miUsuario!!.promedio.toString()
+                        aux = (miUsuario!!.avance*100/miUsuario!!.total).toString()+"%"
+                        mytv_numavance.text = aux
+                        myAvanceBar.progress = miUsuario!!.avance*100/miUsuario!!.total
                         //guardar los datos leidos en room
                         usuarioDAO.insertUser(miUsuario!!)
                         break

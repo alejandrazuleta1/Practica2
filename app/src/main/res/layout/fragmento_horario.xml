@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="56dp"
-    android:background="@color/white"
+    android:background="@color/backgroundHorario"
     android:padding="8dp"
     tools:context=".ui.Horario.HorarioFragment">
 
@@ -34,36 +34,42 @@
             <TextView
                 android:layout_weight=".1428571429"
                 android:text="@string/l"
+                android:textColor="@color/colorPrimaryText"
                 android:textAlignment="center" />
 
             <TextView
                 android:layout_marginStart="1dp"
                 android:layout_weight=".1428571429"
                 android:text="@string/m"
+                android:textColor="@color/colorPrimaryText"
                 android:textAlignment="center" />
 
             <TextView
                 android:layout_marginStart="1dp"
                 android:layout_weight=".1428571429"
                 android:text="@string/w"
+                android:textColor="@color/colorPrimaryText"
                 android:textAlignment="center" />
 
             <TextView
                 android:layout_marginStart="1dp"
                 android:layout_weight=".1428571429"
                 android:text="@string/j"
+                android:textColor="@color/colorPrimaryText"
                 android:textAlignment="center" />
 
             <TextView
                 android:layout_marginStart="1dp"
                 android:layout_weight=".1428571429"
                 android:text="@string/v"
+                android:textColor="@color/colorPrimaryText"
                 android:textAlignment="center" />
 
             <TextView
                 android:layout_marginLeft="1dp"
                 android:layout_weight=".1428571429"
                 android:text="@string/S"
+                android:textColor="@color/colorPrimaryText"
                 android:textAlignment="center" />
         </TableRow>
     </TableLayout>

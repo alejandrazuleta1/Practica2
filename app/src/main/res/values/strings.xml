@@ -122,4 +122,5 @@
     <string name="seleccionimagen">Selecciona una imagen de perfil:</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
 </resources>

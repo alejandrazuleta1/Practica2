@@ -46,7 +46,7 @@ class GVAdapter(context: Context, list: ArrayList<HashMap<String,Int>>, cursosLi
         }
 
 
-        if (list.get(position).keys.elementAt(0).isNotEmpty() && list.get(position).keys.elementAt(0).length>4){
+        if (list.get(position).keys.elementAt(0).isNotEmpty() && list.get(position).keys.elementAt(0).length>5){
             itemView.setOnClickListener{
                 val intent = Intent(context, HorarioDetalleActivity::class.java)
                 intent.putExtra("sesion",sesionList[position])
